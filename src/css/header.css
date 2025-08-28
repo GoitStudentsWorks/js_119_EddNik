@@ -42,3 +42,6 @@
 .nav-link.active::after {
   background: #747bff;
 }
+.nav-logo-icon {
+  fill: red;
+}
