@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const BASE_URL = "https://sound-wave.b.goit.study/api-docs/";
+export const BASE_URL = "https://sound-wave.b.goit.study/api";
 
 export async function fetchArtists(limit = 8) {
   try {
