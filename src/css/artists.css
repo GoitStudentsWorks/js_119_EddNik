@@ -4,25 +4,24 @@
   stroke-width: 0;
   stroke: currentColor;
 }
-.artists-title{
+.artists-text{
 font-family: "Epilogue", sans-serif;
   font-weight: 700;
   font-size: 44px;
 
-  /* line-height: 53px; */
+  /* line-height: 72px; */
   line-height: 120%;
   letter-spacing: -0.01em;
   color: #fff;
-  margin-top: 16px;
 }
-.artists-text{
-  font-family: "IBM Plex Sans", sans-serif;
-    font-weight: 600;
-    font-size: 16px;
+.artists-title{
+font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
 
-    /* line-height: 24px; */
-    line-height: 150%;
-    color: #fff;
+  /* line-height: 24px; */
+  line-height: 150%;
+  color: #fff;
 }
 .artists-btn-load{
   border-radius: 12px;
@@ -39,7 +38,7 @@ font-family: "Epilogue", sans-serif;
       /* line-height: 27px; */
       line-height: 150%;
       color: #fff;
-      margin: 0 auto;
+      margin: 0 auto 64px auto;
 
 }
 .artists-link{
@@ -65,15 +64,15 @@ font-family: "IBM Plex Sans", sans-serif;
     }
 
     .artist-card {
-      margin-bottom: 64px;
+      margin-bottom: 32px;
       border-radius: 12px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       display: flex;
       flex-direction: column;
-      /* justify-content: space-between; */
-
     }
-
+.artist-card:not(last-chiled){
+  margin-bottom: 64px;
+}
     .artist-card img {
       width: 100%;
       height: 177px;
@@ -126,43 +125,60 @@ font-family: "IBM Plex Sans", sans-serif;
     width:704px ;
     height: 146px; ;
   }
+  .artist-container{
+    padding: 64px 32px;
+  }
   .artists-btn-load{
       width: 340px;
+      margin-bottom: 0px;
   }
     .artist-card img {
       width: auto;
       height: 432px;
     }
-
+    .artist-card:not(last-chiled){
+      margin-bottom: 32px;
+    }
 }
-
 
 @media screen and (min-width: 1440px) {
   .artists-container {
     padding: 112px 64px;
     margin: 0;
   }
+  .artists-title{
+    margin-top: 112px;
+    margin-bottom: 16px;
+  }
 .artists-text-container{
-  width: 863px;
+  width: 523px;
   height: 184px;
+  margin-bottom: 80px;
 }
   .artist-gallery {
-    row-gap: 32px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-
+      flex-wrap: wrap;
+      gap: 32px;
   }
 
-  .artists-card {
-
+  .artist-card {
+    margin-bottom: 32px;
+    display: block;
     width: calc((100% - 32px) / 2);
   }
+  .artist-card:not(last-chiled){
+    margin-bottom: 0px;
+  }
   .artists-btn-load{
+    margin-top: 64px;
     width: 170px;
   }
   .artist-card img{
       width: 640px;
       height: 393px;
   }
+.artists-text{
+font-size: 60px;
+}
 }
