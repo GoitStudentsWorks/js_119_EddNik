@@ -1,0 +1,200 @@
+
+.icon {
+  display: inline-block;
+  stroke-width: 0;
+  stroke: currentColor;
+  margin-left: 16px;
+}
+.artist-container{
+  padding: 64px 16px;
+}
+.artists-text{
+font-family: "Epilogue", sans-serif;
+  font-weight: 700;
+  font-size: 44px;
+
+  /* line-height: 72px; */
+  line-height: 120%;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+.artists-title{
+font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+
+  /* line-height: 24px; */
+  line-height: 150%;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.artists-btn-load {
+  border-radius: 12px;
+  padding: 10px 24px;
+  width: 288px;
+  height: 47px;
+  box-shadow: 0 1px 2px 0 rgba(6, 3, 7, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(6, 3, 7, 0.15),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+  background: #764191;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 150%;
+  color: #fff;
+}
+button.artists-btn-load {
+  display: flex !important;
+  justify-content: center;
+    align-items: center;
+}
+.artists-link{
+font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+
+  /* line-height: 27px; */
+  line-height: 150%;
+  color: #fff;
+   display: inline-flex;
+  align-items: center;
+  margin-top: 24px;
+  text-decoration: none;
+  cursor: pointer;
+}
+    .artist-gallery {
+      display: block;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      list-style: none;
+      padding: 0;
+    }
+
+    .artist-card {
+      margin-top: 32px;
+      margin-bottom: 32px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+    }
+.artist-card:not(last-chiled){
+  margin-bottom: 64px;
+}
+    .artist-card img {
+      width: 100%;
+      height: 177px;
+      object-fit: cover;
+      border-radius: 16px;
+
+    }
+.artist-name{
+  font-family: "Epilogue", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+
+    /* line-height: 42px; */
+    line-height: 130%;
+    letter-spacing: -0.01em;
+    color: #fff;
+}
+.artist-info{
+font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+
+  /* line-height: 27px; */
+  line-height: 150%;
+  color: #fff;
+}
+        .artist-genres {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 16px;
+          list-style: none;
+          padding: 0;
+          margin: 16px 0;
+          color: #fff;
+        }
+        .genre-item {
+          padding: 4px 8px;
+          border-radius: 6px;
+          font-size: 12px;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            padding: 4px 10px;
+        }
+    .artists-text-container{
+      width: 288px;
+      height: 199px;
+    }
+@media screen and (min-width: 768px) {
+  .artists-text-container{
+    width:704px ;
+    height: 146px; ;
+  }
+  .artist-container{
+    padding: 64px 32px;
+  }
+  .artists-btn-load{
+      width: 340px;
+      margin-bottom: 0px;
+  }
+    .artist-card img {
+      width: auto;
+      height: 432px;
+    }
+    .artist-card:not(last-chiled){
+      margin-bottom: 32px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+  .artist-container {
+    padding: 112px 64px;
+    margin: 0;
+  }
+  .icon{
+    margin-left: 10px;
+  }
+  .artists-title{
+    margin-top: 112px;
+    margin-bottom: 16px;
+  }
+.artists-text-container{
+  width: 523px;
+  height: 184px;
+  margin-bottom: 80px;
+}
+  .artist-gallery {
+    display: flex;
+    flex-direction: row;
+      flex-wrap: wrap;
+      gap: 32px;
+  }
+
+  .artist-card {
+    margin-bottom: 32px;
+    display: block;
+    width: calc((100% - 32px) / 2);
+  }
+  .artist-card:not(last-chiled){
+    margin-bottom: 0px;
+  }
+  .artists-btn-load{
+    margin-top: 64px;
+    width: 170px;
+  }
+  .artist-card img{
+      width: 640px;
+      height: 393px;
+
+  }
+.artists-text{
+font-size: 60px;
+}
+}

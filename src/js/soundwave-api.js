@@ -1,19 +1,18 @@
-import axios from "axios";
+import axios from 'axios';
 
-export const BASE_URL = "https://sound-wave.b.goit.study/api";
+export const BASE_URL = 'https://sound-wave.b.goit.study/api';
 
-export async function fetchArtists(limit = 8) {
+export async function fetchArtists(page = 1, limit = 8) {
   try {
     const response = await axios.get(`${BASE_URL}/artists`, {
-      params: { limit },
+      params: { page, limit },
     });
     return response.data;
   } catch (error) {
-    console.error("Error fetching artists:", error);
+    console.error('Error fetching artists:', error);
     throw error;
   }
 }
-
 
 export async function fetchArtistById(id) {
   try {
@@ -25,7 +24,6 @@ export async function fetchArtistById(id) {
   }
 }
 
-
 export async function fetchAlbumsByArtist(id) {
   try {
     const response = await axios.get(`${BASE_URL}/artists/${id}/albums`);
@@ -35,4 +33,3 @@ export async function fetchAlbumsByArtist(id) {
     throw error;
   }
 }
-
