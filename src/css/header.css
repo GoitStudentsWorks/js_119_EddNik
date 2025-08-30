@@ -43,5 +43,5 @@
   background: #747bff;
 }
 .nav-logo-icon {
-  fill: red;
+  fill: var(--color-scheme-2-accent);
 }

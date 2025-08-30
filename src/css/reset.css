@@ -12,7 +12,8 @@ p:last-child {
   margin-bottom: 0;
 }
 
-ul {
+ul,
+ol {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -24,6 +25,8 @@ a {
 }
 
 button {
+  border: none;
+  background-color: transparent;
   cursor: pointer;
 }
 
