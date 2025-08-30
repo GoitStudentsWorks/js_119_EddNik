@@ -1,51 +1,91 @@
-import axios from 'axios';
+import { fetchArtists } from './soundwave-api';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
-const BASE_URL = 'https://sound-wave.b.goit.study/api-docs/';
-const PER_PAGE = 8;
+const gallery = document.querySelector('.artist-gallery');
+const loadMoreBtn = document.querySelector('.artists-btn-load');
 
-export async function getImagesByQuery(query, currentPage) {
-  const response = await axios.get(BASE_URL, {
-    params: {
-      q: query,
-      image_type: 'photo',
-      orientation: 'horizontal',
-      safesearch: true,
-      page: currentPage,
-      per_page: PER_PAGE,
-    },
-  });
+let artists = [];
+let currentPage = 1;
+const limit = 8;
+let maxPage = 0;
 
-  return response.data;
+function createCardMarkup(artist) {
+  return `
+    <li class="artist-card">
+      <img src="${artist.strArtistThumb}" alt="${artist.strArtist}">
+      <ul class="artist-genres">
+        ${artist.genres
+          .map(genre => `<li class="genre-item">${genre}</li>`)
+          .join('')}
+      </ul>
+      <h3 class="artist-name">${artist.strArtist}</h3>
+      <p class="artist-info">${artist.strBiographyEN.substring(0, 100)}...</p>
+      <a href="./modal.html?id=${artist._id}"
+         class="link artists-link"
+         data-id="${artist._id}">
+        Learn more
+        <svg class="icon" width="24" height="24">
+          <use href="../img/artists-svg/artists.svg#icon-caret-right"></use>
+        </svg>
+      </a>
+    </li>
+  `;
 }
 
-const gallery = document.querySelector('.artists-gallery');
-
-function createGallery(images) {
-  return images
-    .map(
-      ({
-        strArtistThumb,
-        strArtist,
-        genres: [],
-        strGender,
-        strBiographyEN,
-      }) => `
-      <li class="gallery-item">
-          <img src="${strArtistThumb}" alt="${strArtist}" loading="lazy"/>
-
-        <div class="genre">
-        <b>genres:</b>${genres}</div>
-        <div class="info">
-          <p><b>strArtist:</b> ${strArtist}</p>
-          <p><b>strGender:</b>${strGender}</p>
-          <p><b>strBiographyEN:</b>${strBiographyEN}</p>
-
-        </div>
-      </li>
-    `
-    )
-    .join('');
+function createGallery(artistsArray) {
+  return artistsArray.map(createCardMarkup).join('');
 }
 
-const markup = createGallery(res.hits);
-refs.ulElem.insertAdjacentHTML('beforeend', markup);
+async function loadArtists(page = 1) {
+  try {
+    const res = await fetchArtists(page, limit);
+
+    if (!res.artists || res.artists.length === 0) {
+      iziToast.error({
+        position: 'topRight',
+        message: 'No more artists',
+      });
+      hideLoadMoreButton();
+      return;
+    }
+
+    artists = [...artists, ...res.artists];
+    gallery.insertAdjacentHTML('beforeend', createGallery(res.artists));
+
+    maxPage = Math.ceil(res.totalArtists / limit);
+    checkBtnVisibleStatus();
+  } catch (error) {
+    console.error('Error loading artists:', error);
+    iziToast.error({
+      title: 'Error',
+      message: 'Failed to load artists',
+      position: 'topRight',
+      color: 'red',
+    });
+  }
+}
+
+loadMoreBtn.addEventListener('click', async () => {
+  currentPage += 1;
+  loadMoreBtn.disabled = true;
+  await loadArtists(currentPage);
+  loadMoreBtn.disabled = false;
+});
+
+function checkBtnVisibleStatus() {
+  if (currentPage < maxPage) {
+    showLoadMoreButton();
+  } else {
+    hideLoadMoreButton();
+  }
+}
+
+function showLoadMoreButton() {
+  loadMoreBtn.style.display = 'block';
+}
+function hideLoadMoreButton() {
+  loadMoreBtn.style.display = 'none';
+}
+
+loadArtists(currentPage);
