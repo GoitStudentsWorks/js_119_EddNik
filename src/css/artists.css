@@ -4,29 +4,25 @@
   stroke-width: 0;
   stroke: currentColor;
   margin-left: 16px;
-  color: #fff;
 }
 .artist-container{
   padding: 64px 16px;
 }
 .artists-text{
-font-family: "Epilogue", sans-serif;
+  font-family: var(--second-family);
   font-weight: 700;
   font-size: 44px;
 
   /* line-height: 72px; */
   line-height: 120%;
   letter-spacing: -0.01em;
-  color: #fff;
 }
 .artists-title{
-font-family: "IBM Plex Sans", sans-serif;
   font-weight: 600;
   font-size: 16px;
 
   /* line-height: 24px; */
   line-height: 150%;
-  color: #fff;
   margin-bottom: 16px;
 }
 .artists-btn-load {
@@ -39,14 +35,14 @@ font-family: "IBM Plex Sans", sans-serif;
     inset 0 0 0 1px rgba(6, 3, 7, 0.15),
     inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
     inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
-  background: #764191;
-  font-family: "IBM Plex Sans", sans-serif;
+  background: var(--color-affair);
+  font-family: var(--font-family);
   font-weight: 500;
   font-size: 18px;
   text-align: center;
   margin: 0 auto;
   line-height: 150%;
-  color: #fff;
+  color: var(--color-scheme-1-text);
 }
 button.artists-btn-load {
   display: flex !important;
@@ -54,13 +50,11 @@ button.artists-btn-load {
     align-items: center;
 }
 .artists-link{
-font-family: "IBM Plex Sans", sans-serif;
   font-weight: 500;
   font-size: 18px;
 
   /* line-height: 27px; */
   line-height: 150%;
-  color: #fff;
    display: inline-flex;
   align-items: center;
   margin-top: 24px;
@@ -96,26 +90,24 @@ font-family: "IBM Plex Sans", sans-serif;
 
     }
 .artists-name{
-  font-family: "Epilogue", sans-serif;
+  font-family: var(--second-family);
     font-weight: 700;
     font-size: 32px;
 
     /* line-height: 42px; */
     line-height: 130%;
     letter-spacing: -0.01em;
-    color: #fff;
     padding-top: 16px;
     padding-bottom: 8px;
     text-align: left;
 }
 .artist-info{
-font-family: "IBM Plex Sans", sans-serif;
+font-family: var(--font-family);
   font-weight: 400;
   font-size: 18px;
 
   /* line-height: 27px; */
   line-height: 150%;
-  color: #fff;
 }
         .artist-genres {
           display: flex;
@@ -124,14 +116,13 @@ font-family: "IBM Plex Sans", sans-serif;
           list-style: none;
           padding: 0;
           margin: 16px 0;
-          color: #fff;
         }
         .genre-item {
           margin-top: 24px;
           padding: 4px 8px;
           border-radius: 6px;
           font-size: 12px;
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          border: 1px solid var(--opacity-white-20);
             border-radius: 6px;
             padding: 4px 10px;
         }
