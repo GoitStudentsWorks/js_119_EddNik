@@ -1,28 +1,32 @@
 <div id="artist-modal" class="modal hidden">
   <div class="modal-overlay"></div>
-  <div class="modal-content">
-    <button class="modal-close" aria-label="Close">&times;</button>
+  <div class="container container-modal">
+    <div class="modal-content">
+      <button class="modal-close" type="button">
+        <svg class="modal-close-btn-icon" width="16" height="16">
+          <use href="../img/sprite.svg#icon-modal-close"></use>
+        </svg>
+      </button>
 
-    <div class="modal-body">
-      <div class="artist-header">
-        <img id="artist-image" src="" alt="Artist Image" class="artist-img" />
-        <div class="artist-info">
-          <h2 id="artist-name" class="artist-name"></h2>
-          <p id="artist-years" class="artist-years"></p>
-          <p id="artist-gender" class="artist-gender hidden"></p>
-          <p id="artist-members" class="artist-members hidden"></p>
-          <p id="artist-country" class="artist-country"></p>
+      <div class="modal-body">
+        <h2 id="artist-name" class="artist-name"></h2>
+        <div class="artist-header">
+          <img id="artist-image" src="" alt="Artist Image" class="artist-img" />
+          <div class="artist-info">
+            <p id="artist-years" class="artist-years"></p>
+            <p id="artist-gender" class="artist-gender hidden"></p>
+            <p id="artist-members" class="artist-members hidden"></p>
+            <p id="artist-country" class="artist-country"></p>
+            <p id="artist-bio" class="artist-bio"></p>
+            <p id="artist-genres" class="artist-genres"></p>
+          </div>
+          <!-- <div class="artist-bio-genres"></div> -->
         </div>
+
+        <div id="artist-albums" class="artist-albums"></div>
       </div>
 
-      <div class="artist-bio-genres">
-        <p id="artist-bio" class="artist-bio"></p>
-        <p id="artist-genres" class="artist-genres"></p>
-      </div>
-
-      <div id="artist-albums" class="artist-albums"></div>
+      <div id="loader" class="loader">Loading...</div>
     </div>
-
-    <div id="loader" class="loader">Loading...</div>
   </div>
 </div>

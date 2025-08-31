@@ -67,7 +67,7 @@ async function populateModal(artist) {
     const albums = await fetchAlbumsByArtist(artist._id);
     albumsContainer.innerHTML = '';
 
-    albums.forEach(album => {
+    albums.albumsList.forEach(album => {
       const albumDiv = document.createElement('div');
       albumDiv.classList.add('album');
 
@@ -89,9 +89,14 @@ async function populateModal(artist) {
               <span>${track.intDuration || '-'}</span>
               ${
                 track.movie
-                  ? `<a href="${track.movie}" target="_blank" aria-label="YouTube link">▶</a>`
+                  ? ` <a href="${track.movie}" target="_blank" aria-label="YouTube link" class="youtube-link">
+                        <svg class="icon-youtube" width="21" height="15" aria-hidden="true" focusable="false">
+                            <use href="../img/sprite.svg#icon-Youtube"></use>
+                        </svg>
+                       </a>`
                   : ''
               }
+              
             </li>
           `
             )
