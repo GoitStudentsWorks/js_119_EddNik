@@ -26,10 +26,7 @@ function createCardMarkup(artist) {
       <a href="./modal.html?id=${artist._id}"
          class="link artists-link js-learn-more"
          data-id="${artist._id}">
-        Learn more
-        <svg class="icon" width="24" height="24">
-          <use href="img/artists-svg/artists.svg#icon-caret-right"></use>
-        </svg>
+        Learn more<span class="artists-arrow">▶</span>
       </a>
     </li>
   `;
