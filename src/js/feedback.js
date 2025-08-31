@@ -4,7 +4,9 @@ import 'css-star-rating/css/star-rating.css';
 
 import { fetchFeedbacks } from './soundwave-api.js';
 
-const swiperWrapper = document.querySelector('.feedback-swiper .swiper-wrapper');
+const swiperWrapper = document.querySelector(
+  '.feedback-swiper .swiper-wrapper'
+);
 
 function roundRating(rating) {
   return Math.round(rating);
@@ -15,9 +17,12 @@ function createFeedbackCard(feedback) {
   slide.classList.add('swiper-slide');
 
   slide.innerHTML = `
-    <p class="feedback-text">${feedback.text}</p>
-    <div class="feedback-author">${feedback.author}</div>
-    <div class="feedback-rating">${'⭐'.repeat(roundRating(feedback.rating))}</div>
+  <div class="feedback-rating">${'⭐'.repeat(
+    roundRating(feedback.rating)
+  )}</div>
+    <p class="feedback-text">${feedback.descr}</p>
+    <div class="feedback-author">${feedback.name}</div>
+    
   `;
 
   return slide;
@@ -25,7 +30,7 @@ function createFeedbackCard(feedback) {
 
 async function initFeedbacks() {
   const feedbacks = await fetchFeedbacks(10);
-
+  console.log(swiperWrapper);
   feedbacks.forEach(f => {
     swiperWrapper.appendChild(createFeedbackCard(f));
   });
