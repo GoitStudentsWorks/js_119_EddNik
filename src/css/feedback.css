@@ -1,0 +1,32 @@
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0 ;
+}
+.feedback-rating .star-rating {
+    font-size: 20px;
+    /* розмір зірочок */
+}
+
+.feedback-swiper {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.swiper-slide {
+    font-family: "Epilogue", sans-serif;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+        text-align: center;
+        color: #fff;
+}
+
