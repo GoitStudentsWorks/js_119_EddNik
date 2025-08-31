@@ -33,3 +33,34 @@ export async function fetchAlbumsByArtist(id) {
     throw error;
   }
 }
+
+// Відгуки
+export async function fetchFeedbacks() {
+  try {
+    const response = await axios.get(`${BASE_URL}/feedbacks`);
+    console.log('Raw feedback response:', response.data);
+    
+    // Якщо API обертає дані у response.data.data
+    if (Array.isArray(response.data)) {
+      return response.data;
+    } else if (response.data.data && Array.isArray(response.data.data)) {
+      return response.data.data;
+    } else {
+      // Повертаємо порожній масив, якщо формат незвичний
+      return [];
+    }
+  } catch (error) {
+    console.error("Error fetching feedbacks:", error);
+    throw error;
+  }
+}
+
+export async function postFeedback(feedbackData) {
+  try {
+    const response = await axios.post(`${BASE_URL}/feedbacks`, feedbackData);
+    return response.data; 
+  } catch (error) {
+    console.error("Error posting feedback:", error);
+    throw error;
+  }
+}
