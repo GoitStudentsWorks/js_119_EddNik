@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     overflow: auto;
-    background: #060307;
+    background: rgba(0, 0, 0, 0.25);
     border-radius: 16px;
     z-index: 1000;
     padding: 64px;
@@ -20,6 +20,11 @@
 }
 
 .modal-content {
+    /* display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 48px;
     background: #060307;
     border-radius: 16px;
     padding: 64px;
@@ -27,18 +32,46 @@
     overflow-y: auto;
     width: 90%;
     max-width: 900px;
-    font-family: 'Inter', sans-serif;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #fff; */
+    background: #060307;
+    border-radius: 16px;
+    padding: 64px;
+    max-height: 90vh;
+    overflow-y: auto;
+    width: 90%;
+    max-width: 900px;
+    font-family: "Inter", sans-serif;
+}
+
+.modal-body {   
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .modal-close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 16px;
     right: 16px;
-    font-size: 28px;
-    background: none;
+    background-color: transparent;
     border: none;
     cursor: pointer;
-    font-weight: bold;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+}
+
+.modal-close-btn-icon {
+    fill: #fff;
 }
 
 .loader {
@@ -59,14 +92,21 @@
 }
 
 .artist-img {
-    width: 180px;
-    height: 180px;
+    width: 576px;
+    height: 354px;
     object-fit: cover;
     border-radius: 16px;
 }
 
 .artist-info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 24px;
     flex: 1;
+    width: 576px;
+    height: 374px;
 }
 
 .artist-name {
@@ -83,23 +123,44 @@
 .artist-years,
 .artist-gender,
 .artist-members,
-.artist-country {
+.artist-country {  
     font-size: 18px;
     margin: 4px 0;
     color: #fff;
 }
 
 /* Biography and genres*/
-.artist-bio-genres {
-    margin-bottom: 20px;
-}
-
 .artist-bio,
 .artist-genres {
     font-size: 16px;
     margin: 8px 0;
     line-height: 1.5;
+    color: #fff;
 }
+/* .artist-bio-genres {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0px;
+    margin-bottom: 24px;    
+} */
+
+/* .artist-bio {
+    font-size: 18px;
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.artist-genres {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 16px;
+    font-weight: 600;
+    font-size: 16px;
+} */
 
 /* Albums */
 .artist-albums .album {
@@ -140,7 +201,13 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    border-top: 1px solid #ddd;
+    /* border-top: 1px solid #ddd; */
+    /* display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 32px; */
 }
 
 .album-header {
@@ -153,7 +220,7 @@
 }   
 
 .album ul li {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr 60px 24px;
     align-items: center;
     padding: 6px 0;
@@ -161,7 +228,16 @@
     line-height: 20px;
     border-radius: 8px;
     transition: background 0.2s ease;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #eee; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 16px;
+    border-radius: 8px;
+    padding: 4px 0px 4px 12px;
+    width: 250px;
+    height: 32px;
 }
 
 .album ul li:hover {
@@ -185,151 +261,11 @@
     background-color: #444;
 }
 
-.album ul li span:first-child {
-    color: #E0E0E0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+.album ul li:nth-child(odd) {
+     background-color: rgba(255, 255, 255, 0.1);
 }
 
-.album ul li span:nth-child(2) {
-    text-align: center;
-    color: #A1A1A1;
-    font-size: 13px;
+.album ul li:nth-child(even) {
+     background-color: #1c1c1c;
 }
 
-/* Mobile version */
-@media (max-width: 320px) {
-    .modal-content {
-        padding: 16px;
-        width: 95%;
-    }
-
-    .artist-header {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .artist-img {
-        width: 140px;
-        height: 140px;
-        margin-bottom: 12px;
-    }
-
-    .artist-name {
-        font-size: 22px;
-        text-align: center;
-    }
-
-    .artist-years,
-    .artist-gender,
-    .artist-members,
-    .artist-country,
-    .artist-bio,
-    .artist-genres {
-        font-size: 14px;
-        text-align: center;
-    }
-
-    .album ul li {
-        grid-template-columns: 1fr 60px 30px;
-        font-size: 14px;
-    }
-}
-
-/* Tablet version */
-@media (min-width: 321px) and (max-width: 768px) {
-    .modal-content {
-        padding: 20px;
-        width: 90%;
-    }
-
-    .artist-header {
-        flex-direction: row;
-    }
-
-    .artist-img {
-        width: 160px;
-        height: 160px;
-    }
-
-    .artist-name {
-        font-size: 26px;
-    }
-
-    .artist-years,
-    .artist-gender,
-    .artist-members,
-    .artist-country,
-    .artist-bio,
-    .artist-genres {
-        font-size: 15px;
-    }
-
-    .album ul li {
-        grid-template-columns: 1fr 70px 35px;
-        font-size: 15px;
-    }
-}
-
-/* Desktop version 1440px */
-@media (min-width: 769px) and (max-width: 1440px) {
-    .modal-content {
-        padding: 24px;
-        width: 85%;
-    }
-
-    .artist-img {
-        width: 180px;
-        height: 180px;
-    }
-
-    .artist-name {
-        font-size: 28px;
-    }
-
-    .artist-years,
-    .artist-gender,
-    .artist-members,
-    .artist-country,
-    .artist-bio,
-    .artist-genres {
-        font-size: 16px;
-    }
-
-    .album ul li {
-        grid-template-columns: 1fr 80px 40px;
-        font-size: 16px;
-    }
-}
-
-/* Big desktops >1440px */
-@media (min-width: 1441px) {
-    .modal-content {
-        width: 70%;
-        padding: 32px;
-    }
-
-    .artist-img {
-        width: 200px;
-        height: 200px;
-    }
-
-    .artist-name {
-        font-size: 32px;
-    }
-
-    .artist-years,
-    .artist-gender,
-    .artist-members,
-    .artist-country,
-    .artist-bio,
-    .artist-genres {
-        font-size: 18px;
-    }
-
-    .album ul li {
-        grid-template-columns: 1fr 100px 50px;
-        font-size: 17px;
-    }
-}
