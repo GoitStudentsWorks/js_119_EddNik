@@ -22,7 +22,7 @@ function createCardMarkup(artist) {
       <h3 class="artist-name">${artist.strArtist}</h3>
       <p class="artist-info">${artist.strBiographyEN.substring(0, 100)}...</p>
       <a href="./modal.html?id=${artist._id}"
-         class="link artists-link"
+         class="link artists-link js-learn-more"
          data-id="${artist._id}">
         Learn more
         <svg class="icon" width="24" height="24">
