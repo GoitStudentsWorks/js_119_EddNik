@@ -28,7 +28,7 @@ function createCardMarkup(artist) {
          data-id="${artist._id}">
         Learn more
         <svg class="icon" width="24" height="24">
-          <use href="../img/artists-svg/artists.svg#icon-caret-right"></use>
+          <use href="/img/artists-svg/artists.svg#icon-caret-right"></use>
         </svg>
       </a>
     </li>
