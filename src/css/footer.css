@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 /* ===== .footer ===== */
 .footer {
   /* padding: 20px 0; */
@@ -14,12 +18,9 @@
   gap: 48px;
   padding: 48px 16px;
   padding-bottom: 64px;
-  /* width: 320px;
-  height: 484px; */
 }
 
 /* ===== .logo ===== */
-
 .logo {
   display: flex;
   align-items: flex-start;
@@ -28,18 +29,16 @@
   gap: 24px;
   stroke: none;
   fill: #764191;
-  /* width: 84px;
-  height: 36px; */
+  width: 84px;
+  height: 36px;
 }
 
 /* ===== .logo-icon ===== */
 .logo-icon {
-  /* fill: currentColor; */
 }
 
 /* ===== .footer-nav ===== */
 .footer-nav {
-  /* margin-top: 32px; */
 }
 
 /* ===== .footer-menu / .footer-item ===== */
@@ -114,9 +113,9 @@
 .footer-menu {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: row;
-  /* margin-top: 32px; */
+  gap: 24px;
 }
 
 /* ===== .footer-link ===== */
@@ -125,6 +124,11 @@
   font-size: 16px;
   line-height: 1.5;
   color: #fff;
+
+  font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
 }
 
 /* ===== .footer-social ===== */
@@ -138,19 +142,8 @@
     order: 2;
 }
 
-/* ===== .footer-soc ===== */
-.footer-soc {
-
-}
-
-/* ===== .footer-logo-item ===== */
-.footer-logo-item {
-
-}
-
 /* ===== .footer-copy ===== */
 .footer-copy {
-  /* margin-right: auto; */
   order: 1;
   margin: 0;
 }
@@ -164,9 +157,47 @@
 }
 }
 
-
-
 /* ===== ≥1024px ===== */
 @media screen and (min-width: 1440px) {
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 80px;
+  padding: 80px 64px;
+}
 
+/* ===== .footer-social ===== */
+.footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ===== .footer-soc ===== */
+.footer-soc {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 24px;
+  color: #fff;
+}
+
+/* ===== .footer-logo-item ===== */
+.footer-logo-item {
+  display: block;
+  fill: currentColor;
+}
+
+/* ===== .footer-copy ===== */
+.footer-copy {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+  margin: 0;
+}
 }
