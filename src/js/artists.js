@@ -21,7 +21,7 @@ function createCardMarkup(artist) {
       </ul>
       <div class="artist-container-info">
       <h3 class="artists-name">${artist.strArtist}</h3>
-      <p class="artist-info">${artist.strBiographyEN.substring(0, 100)}...</p>
+      <p class="artists-info">${artist.strBiographyEN.substring(0, 100)}...</p>
       </div>
       <a href="./modal.html?id=${artist._id}"
          class="link artists-link js-learn-more"
