@@ -14,7 +14,7 @@ function createCardMarkup(artist) {
   return `
     <li class="artist-card">
       <img src="${artist.strArtistThumb}" alt="${artist.strArtist}">
-      <ul class="artist-genres">
+      <ul class="artist-genres js-learn-more">
         ${artist.genres
           .map(genre => `<li class="genre-item">${genre}</li>`)
           .join('')}
