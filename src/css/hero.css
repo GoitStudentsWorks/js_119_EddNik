@@ -1,53 +1,52 @@
 .hero-section {
-  /* height: 900px;
-   */
-  margin: auto;
-  /* background-color: #23132b; */
+  background-color: #23132b;
   position: relative;
-  /* margin-top: 64px; */
-  background-color: var(--color-scheme-3-background);
 }
 
-.linear-gradient-top {
+.hero-section::before,
+.hero-section::after {
+  content: '';
   position: absolute;
+  left: 0;
+  right: 0;
+}
+.hero-section::before {
   top: 0;
-  left: 0;
-  width: 100%;
   height: 80px;
-  background: linear-gradient(180deg, rgba(35, 19, 43, 0) 0%, #060307 100%);
-  z-index: 2;
+  /* верхній */
+  background: linear-gradient(180deg, #060307 0%, rgba(35, 19, 43, 0) 100%);
 }
 
-.linear-gradient-bottom {
-  position: absolute;
+.hero-section::after {
   bottom: 0;
-  left: 0;
-  width: 100%;
   height: 106px;
-  background: linear-gradient(180deg, rgba(35, 19, 43, 0) 0%, #060307 100%);
-  z-index: 2;
+  /* нижній */
+  background: linear-gradient(0deg, #060307 0%, rgba(35, 19, 43, 0) 100%);
 }
 
-.hero-context {
-  position: relative;
-  z-index: 3;
+.hero-container {
+  padding: 64px 16px;
 }
 
 .hero-text {
-  font-family: var(--font-family);
+  font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 150%;
-  color: var(--color-scheme-1-text);
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+  margin-bottom: 24px;
+  max-width: 288px;
 }
 
 .hero-title {
-  font-family: var(--second-family);
+  font-family: 'Epilogue', sans-serif;
   font-weight: 700;
-  font-size: 84px;
-  line-height: 110%;
+  font-size: 48px;
+  line-height: 1.1;
   letter-spacing: -0.01em;
-  color: var(--color-scheme-1-text);
+  color: #fff;
+  max-width: 288px;
+  margin-bottom: 20px;
 }
 
 .explore-artists-box {
@@ -57,7 +56,7 @@
   align-items: center;
   border-radius: 12px;
   padding: 10px 24px;
-  width: 288px;
+  max-width: 288px;
   height: 47px;
   box-shadow: 0 1px 2px 0 var(--opacity-neutral-darkest-5),
     inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
@@ -72,6 +71,7 @@
   color: var(--color-white);
   margin: 0 auto;
   transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+  margin-bottom: 64px;
 }
 
 .explore-artists-box:hover,
@@ -88,28 +88,58 @@
 
 .hero-image {
   width: 100%;
-  height: 385px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-image: image-set(
-    url('../img/hero/mobile/mobile-1x.webp') 1x,
-    url('../img/hero/mobile/mobile-2x.webp') 2x
-  );
 }
 
 @media screen and (min-width: 768px) {
-  .linear-gradient-top {
-    height: 125px;
+  .hero-container {
+    padding: 32px;
   }
 
-  .linear-gradient-bottom {
+  .hero-title {
+    max-width: 624px;
+    margin-bottom: 24px;
+  }
+
+  .hero-text {
+    font-size: 20px;
+    margin-bottom: 32px;
+    max-width: 624px;
+  }
+  .explore-artists-box {
+    margin: 0;
+    margin-bottom: 32px;
+    max-width: 246px;
+  }
+
+  .hero-section::after {
     height: 137px;
+    /* нижній */
   }
 }
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1440px) {
-  .linear-gradient-top {
-    height: 80px;
+  .hero-container {
+    display: flex;
+    gap: 31px;
+    padding: 64px;
+  }
+
+  .hero-title {
+    min-width: 640px;
+    font-weight: 700;
+    font-size: 84px;
+  }
+
+  .hero-title {
+    max-width: 624px;
+    margin-bottom: 32px;
+  }
+
+  .hero-context {
+    margin: auto 0;
+  }
+
+  .explore-artists-box {
+    max-width: 208px;
   }
 }
