@@ -179,14 +179,6 @@ input.star-rating[value]::after {
     opacity: 0.35;
     pointer-events: none;
   }
-
-  .swiper-button-prev {
-    left: -70px;
-  }
-
-  .swiper-button-next {
-    right: -70px;
-  }
   .feedback-card {
     padding: 32px 64px;
   }
@@ -203,13 +195,5 @@ input.star-rating[value]::after {
 
   .feedback-text {
     font-size: 32px;
-  }
-
-  .swiper-button-prev {
-    left: -80px;
-  }
-
-  .swiper-button-next {
-    right: -80px;
   }
 }
