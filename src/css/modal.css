@@ -1,5 +1,5 @@
 /* general styles */
-.modal {
+.artist-modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -20,23 +20,6 @@
 }
 
 .modal-content {
-    /* display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
-    gap: 48px;
-    background: #060307;
-    border-radius: 16px;
-    padding: 64px;
-    max-height: 90vh;
-    overflow-y: auto;
-    width: 90%;
-    max-width: 900px;
-    font-family: "IBM Plex Sans", sans-serif;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 1.5;
-    color: #fff; */
     background: #060307;
     border-radius: 16px;
     padding: 64px;
@@ -45,15 +28,17 @@
     width: 90%;
     max-width: 900px;
     font-family: "Inter", sans-serif;
+    color: #fff;
+    position: relative;
 }
 
-.modal-body {   
+/* .modal-body {   
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
     gap: 16px;
-}
+} */
 
 .modal-close {
     display: flex;
@@ -86,121 +71,123 @@
 .artist-header {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
     gap: 16px;
     margin-bottom: 48px;
 }
 
 .artist-img {
-    width: 576px;
-    height: 354px;
+    width: 100%;
+    max-width: 350px;
     object-fit: cover;
     border-radius: 16px;
 }
 
 .artist-info {
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    /* align-items: flex-start;
+    justify-content: flex-start; */
     flex-direction: column;
-    gap: 24px;
+    /* gap: 24px; */
+    gap: 12px;
     flex: 1;
-    width: 576px;
-    height: 374px;
+    /* width: 576px;
+    height: 374px; */
 }
 
 .artist-name {
     font-family: "Epilogue", sans-serif;
     font-weight: 700;
     font-size: 32px;
-    line-height: 1.3;
-    letter-spacing: -0.01em;
+    /* line-height: 1.3;
+    letter-spacing: -0.01em; */
     text-align: center;
-    color: #fff;
-    margin: 0;
+    /* color: #fff; */
+    /* margin: 0; */
+    margin: 0 0 24px 0;
 }
 
 .artist-years,
 .artist-gender,
 .artist-members,
-.artist-country {  
-    font-size: 18px;
-    margin: 4px 0;
-    color: #fff;
-}
-
-/* Biography and genres*/
+.artist-country,
 .artist-bio,
+.artist-genres {  
+    /* font-size: 18px;
+    margin: 4px 0;
+    color: #fff; */
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* .artist-bio,
 .artist-genres {
     font-size: 16px;
     margin: 8px 0;
     line-height: 1.5;
     color: #fff;
-}
-/* .artist-bio-genres {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-    gap: 0px;
-    margin-bottom: 24px;    
-} */
-
-/* .artist-bio {
-    font-size: 18px;
-    margin: 8px 0;
-    line-height: 1.5;
-}
-
-.artist-genres {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: row;
-    gap: 16px;
-    font-weight: 600;
-    font-size: 16px;
 } */
 
 /* Albums */
-.artist-albums .album {
-    margin-bottom: 24px;
-}
-
-.album {
-    background: #1e1c1f;
-    border-radius: 16px;
-    padding: 16px;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
 .artist-albums {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 24px;
     margin-top: 24px;
 }
+/* .artist-albums .album {
+    margin-bottom: 24px;
+} */
+
+.album {
+    background: #1e1c1f;
+    border-radius: 16px;
+    padding: 16px;
+    /* color: #fff; */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* .artist-albums {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+} */
 
 .album h3 {
     font-family: "Epilogue", sans-serif;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 20px;
+    margin: 0 0 8px 0;
+    /* font-size: 24px;
     line-height: 1.3;
     letter-spacing: -0.01em;
     color: #fff;
-    margin: 0;
+    margin: 0; */
 }
 
+
+/* header desktop */
+.album-header {
+    display: grid;
+    grid-template-columns: 1fr 80px 40px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 4px;
+}
+
+/* list */
 .album ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 4px;
     /* border-top: 1px solid #ddd; */
     /* display: flex;
     flex-wrap: wrap;
@@ -208,42 +195,38 @@
     justify-content: flex-start;
     flex-direction: row;
     gap: 32px; */
-}
-
-.album-header {
-    display: grid;
-    grid-template-columns: 1fr 60px 24px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    padding: 4px 0;
-}   
+}  
 
 .album ul li {
-    /* display: grid;
-    grid-template-columns: 1fr 60px 24px;
+    display: grid;
+    grid-template-columns: 1fr auto;
     align-items: center;
-    padding: 6px 0;
     font-size: 14px;
     line-height: 20px;
-    border-radius: 8px;
+    border-radius: 6px;
+    padding: 6px 12px;
     transition: background 0.2s ease;
-    border-bottom: 1px solid #eee; */
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: row;
-    gap: 16px;
-    border-radius: 8px;
-    padding: 4px 0px 4px 12px;
-    width: 250px;
-    height: 32px;
 }
 
 .album ul li:hover {
     background: rgba(255, 255, 255, 0.05);
 }
 
+.album ul li:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.album ul li:nth-child(even) {
+    background-color: #1c1c1c;
+}
+
+.track-meta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* YouTube button */
 .album ul li a {
     display: flex;
     justify-content: center;
@@ -252,7 +235,6 @@
     border-radius: 50%;
     width: 24px;
     height: 24px;
-    font-size: 12px;
     color: #fff;
     transition: background 0.2s ease;
 }
@@ -261,11 +243,26 @@
     background-color: #444;
 }
 
-.album ul li:nth-child(odd) {
-     background-color: rgba(255, 255, 255, 0.1);
-}
+/* mobile */
+@media screen and (max-width: 480px) {
+    .album-header {
+        display: none;
+    }
 
-.album ul li:nth-child(even) {
-     background-color: #1c1c1c;
-}
+    .album ul li {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        padding: 8px 12px;
+    }
 
+    .album ul li span:first-child {
+        font-weight: 600;
+    }
+
+    .track-meta {
+        font-size: 12px;
+        opacity: 0.9;
+    }
+}
