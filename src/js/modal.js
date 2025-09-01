@@ -5,6 +5,7 @@ const overlay = modal.querySelector('.modal-overlay');
 const closeBtn = modal.querySelector('.modal-close');
 const loader = document.getElementById('loader');
 const albumsContainer = document.getElementById('artist-albums');
+const modalBackdrop = document.querySelector('.js-modal-backdrop');
 
 let listeners = [];
 
@@ -187,13 +188,23 @@ addListener(document, 'keydown', e => {
 });
 
 // --- Opening modal by click on Learn more ---
+
 addListener(document, 'click', e => {
+  // addListener('click', e => {
+  e.preventDefault();
   const learnMoreBtn = e.target.closest('.artists-link');
   if (!learnMoreBtn) return;
 
-  e.preventDefault();
   const artistId = learnMoreBtn.dataset.id;
+  console.log(artistId);
   if (artistId) {
     openArtistModal(artistId);
   }
 });
+
+modalBackdrop.addEventListener('click', closeBackdrop);
+function closeBackdrop(event) {
+  if (event.target === event.currentTarget) {
+    closeModal();
+  }
+}
