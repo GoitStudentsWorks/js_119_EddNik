@@ -1,4 +1,5 @@
- document.addEventListener("DOMContentLoaded", () => {
+
+document.addEventListener("DOMContentLoaded", () => {
     const refs = {
       openBtn: document.querySelector('[data-menu-open]'),
       closeBtns: document.querySelectorAll('[data-menu-close]'),
@@ -9,6 +10,7 @@
       refs.modal.classList.toggle('is-open');
       document.body.classList.toggle('no-scroll');
     }
+
 
     refs.openBtn.addEventListener('click', toggleModal);
 
