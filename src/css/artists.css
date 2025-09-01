@@ -163,10 +163,7 @@ font-family: var(--font-family);
   .icon{
     margin-left: 10px;
   }
-  .artists-title{
-    margin-top: 112px;
-    margin-bottom: 16px;
-  }
+
 .artists-text-container{
   width: 523px;
   height: 184px;
