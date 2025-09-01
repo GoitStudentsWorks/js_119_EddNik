@@ -68,7 +68,7 @@
   }
   .burger-icon {
     display: none;
-    
+    cursor: pointer;
   }
   .navigation-list {
     display: flex;
