@@ -10,15 +10,23 @@
   border: 0;
 }
 
-/* Свайпер */
-.feedback-swiper {
+.container {
   width: 100%;
-  max-width: 600px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.feedback-swiper {
+  position: relative;
+  width: 100%;
   margin: 0 auto;
 }
+
 .swiper {
   margin-bottom: 16px;
 }
+
 .swiper-slide {
   font-family: "Epilogue", sans-serif;
   font-weight: 700;
@@ -30,10 +38,14 @@
 }
 
 .feedback-card {
-  padding: 0 0 16px 0;
+  padding: 32px 16px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Рейтинг */
+
 .feedback-rating .star-rating {
   font-size: 20px;
 }
@@ -47,15 +59,40 @@
   pointer-events: none;
 }
 
-.star {
-  position: relative;
-  display: inline-block;
+input.star-rating {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  outline: 0;
   width: 20px;
   height: 20px;
+  position: relative;
+}
+
+input.star-rating::before {
+  content: "☆";
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 20px;
+  color: transparent;
+  
+}
+
+input.star-rating[value]::after {
+  content: "★";
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 20px;
+  color: #764191;
+  width: calc(var(--value) * 20%);
+  overflow: hidden;
 }
 
 
-/* Текст та автор */
 .feedback-text {
   font-family: var(--second-family);
   font-size: 18px;
@@ -64,7 +101,7 @@
   letter-spacing: -0.01em;
   color: var(--color-scheme-1-text);
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 
 .feedback-author {
@@ -76,7 +113,6 @@
   text-align: center;
 }
 
-/* Пагінація */
 .swiper-pagination {
   position: static !important;
   display: flex;
@@ -96,32 +132,38 @@
   background: #764191;
 }
 
-/* Кнопки-стрілки */
-.swiper-button-prev::after,
-.swiper-button-next::after {
-  display: none;
-}
-
 .swiper-button-prev,
 .swiper-button-next {
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   width: 44px;
   height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  color: #764191;
   cursor: pointer;
-  transition: background 0.3s;
+  z-index: 10;
+  transition: color 0.3s;
 }
 
-/* SVG-стрілка */
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  color: #9b6ec9;
+}
+
 .icon-arrow {
   width: 24px;
   height: 24px;
   fill: currentColor;
-  color: #ffffff;
+}
+
+.swiper-button-prev .icon-arrow {
+  transform: rotate(180deg);
 }
 
 .swiper-button-prev .icon-arrow {
@@ -133,30 +175,39 @@
   pointer-events: none;
 }
 
+
 @media only screen and (min-width: 768px) {
   .feedback-card {
-    padding: 0 93px 16px;
+    padding: 32px 64px;
   }
 
   .feedback-text {
     font-size: 26px;
   }
 
-.swiper-button-prev,
-.swiper-button-next {
-  width: 44px !important;
-  height: 44px !important;
-  top: 50% !important;
-  margin-top: -22px !important;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
   .swiper-button-prev {
-    left: 0;
+    left: -70px;
   }
+
   .swiper-button-next {
-    right: 0;
+    right: -70px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .feedback-card {
+    padding: 32px 128px;
+  }
+
+  .feedback-text {
+    font-size: 32px;
+  }
+
+  .swiper-button-prev {
+    left: -80px;
+  }
+
+  .swiper-button-next {
+    right: -80px;
   }
 }
