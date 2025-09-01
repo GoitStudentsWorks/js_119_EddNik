@@ -21,15 +21,12 @@ function createCardMarkup(artist) {
       </ul>
       <div class="artist-container-info">
       <h3 class="artists-name">${artist.strArtist}</h3>
-      <p class="artist-info">${artist.strBiographyEN.substring(0, 100)}...</p>
+      <p class="artists-info">${artist.strBiographyEN.substring(0, 100)}...</p>
       </div>
       <a href="./modal.html?id=${artist._id}"
          class="link artists-link js-learn-more"
          data-id="${artist._id}">
-        Learn more
-        <svg class="icon" width="24" height="24">
-          <use href="img/artists-svg/artists.svg#icon-caret-right"></use>
-        </svg>
+        Learn more<span class="artists-arrow">▶</span>
       </a>
     </li>
   `;

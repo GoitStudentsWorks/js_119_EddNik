@@ -98,35 +98,6 @@ async function populateModal(artist) {
         </div>
       `;
 
-      // albumDiv.innerHTML = `
-      //   <h3>${album.strAlbum}</h3>
-      //   <ul>
-      //     <li class="album-header">
-      //       <span>Track</span>
-      //       <span>Time</span>
-      //       <span></span>
-      //     </li>
-      //     ${tracks
-      //       .map(
-      //         track => `
-      //       <li>
-      //         <span>${track.strTrack}</span>
-      //         <span>${track.intDuration || '-'}</span>
-      //         ${
-      //           track.movie
-      //             ? ` <a href="${track.movie}" target="_blank" aria-label="YouTube link" class="youtube-link">
-      //                   <svg class="icon-youtube" width="21" height="15" aria-hidden="true" focusable="false">
-      //                       <use href="../img/sprite.svg#icon-Youtube"></use>
-      //                   </svg>
-      //                  </a>`
-      //             : ''
-      //         }
-
-      //       </li>
-      //     `
-      //       )
-      //       .join('')}
-      //   </ul>`;
       const tracksHtml = tracks
         .map(track => {
           const youtubeLink = track.movie
@@ -184,6 +155,14 @@ addListener(closeBtn, 'click', closeModal);
 addListener(overlay, 'click', closeModal);
 addListener(document, 'keydown', e => {
   if (e.key === 'Escape') closeModal();
+});
+
+//Click outside the modal
+addListener(modal, 'click', e => {
+  const content = modal.querySelector('.modal-content');
+  if (!content.contains(e.target)) {
+    closeModal();
+  }
 });
 
 // --- Opening modal by click on Learn more ---
