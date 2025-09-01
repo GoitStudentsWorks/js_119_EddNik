@@ -5,7 +5,6 @@ const overlay = modal.querySelector('.modal-overlay');
 const closeBtn = modal.querySelector('.modal-close');
 const loader = document.getElementById('loader');
 const albumsContainer = document.getElementById('artist-albums');
-const modalBackdrop = document.querySelector('.js-modal-backdrop');
 
 let listeners = [];
 
@@ -99,35 +98,6 @@ async function populateModal(artist) {
         </div>
       `;
 
-      // albumDiv.innerHTML = `
-      //   <h3>${album.strAlbum}</h3>
-      //   <ul>
-      //     <li class="album-header">
-      //       <span>Track</span>
-      //       <span>Time</span>
-      //       <span></span>
-      //     </li>
-      //     ${tracks
-      //       .map(
-      //         track => `
-      //       <li>
-      //         <span>${track.strTrack}</span>
-      //         <span>${track.intDuration || '-'}</span>
-      //         ${
-      //           track.movie
-      //             ? ` <a href="${track.movie}" target="_blank" aria-label="YouTube link" class="youtube-link">
-      //                   <svg class="icon-youtube" width="21" height="15" aria-hidden="true" focusable="false">
-      //                       <use href="../img/sprite.svg#icon-Youtube"></use>
-      //                   </svg>
-      //                  </a>`
-      //             : ''
-      //         }
-
-      //       </li>
-      //     `
-      //       )
-      //       .join('')}
-      //   </ul>`;
       const tracksHtml = tracks
         .map(track => {
           const youtubeLink = track.movie
@@ -187,24 +157,22 @@ addListener(document, 'keydown', e => {
   if (e.key === 'Escape') closeModal();
 });
 
-// --- Opening modal by click on Learn more ---
+//Click outside the modal
+addListener(modal, 'click', e => {
+  const content = modal.querySelector('.modal-content');
+  if (!content.contains(e.target)) {
+    closeModal();
+  }
+});
 
+// --- Opening modal by click on Learn more ---
 addListener(document, 'click', e => {
-  // addListener('click', e => {
-  e.preventDefault();
   const learnMoreBtn = e.target.closest('.artists-link');
   if (!learnMoreBtn) return;
 
+  e.preventDefault();
   const artistId = learnMoreBtn.dataset.id;
-  console.log(artistId);
   if (artistId) {
     openArtistModal(artistId);
   }
 });
-
-modalBackdrop.addEventListener('click', closeBackdrop);
-function closeBackdrop(event) {
-  if (event.target === event.currentTarget) {
-    closeModal();
-  }
-}
