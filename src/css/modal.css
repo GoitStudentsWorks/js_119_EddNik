@@ -113,9 +113,6 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    /* border-radius: 16px;
-    padding: 16px;
-    gap: 12px; */
 }
 
 .album h3 {
