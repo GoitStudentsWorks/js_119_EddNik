@@ -5,8 +5,19 @@ const overlay = modal.querySelector('.modal-overlay');
 const closeBtn = modal.querySelector('.modal-close');
 const loader = document.getElementById('loader');
 const albumsContainer = document.getElementById('artist-albums');
+const gallery = document.querySelector('.artist-gallery');
 
-let listeners = [];
+// let listeners = [];
+let dynamicListeners = [];
+
+// format duration of track
+function formatDuration(ms) {
+  if (!ms || isNaN(ms)) return '-';
+  const totalSeconds = Math.floor(ms / 1000);
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+}
 
 async function openArtistModal(artistId) {
   modal.classList.remove('hidden');
@@ -58,45 +69,68 @@ async function populateModal(artist) {
   document.getElementById('artist-bio').textContent = `Biography: ${
     artist.strBiographyEN || 'information missing'
   }`;
-  document.getElementById('artist-genres').textContent = `Genres: ${
-    artist.genres?.join(', ') || 'information missing'
-  }`;
+
+  // Genres
+  let genresText = 'information missing';
+  if (Array.isArray(artist.genres)) {
+    genresText = artist.genres.join(', ');
+  } else if (typeof artist.genres === 'string') {
+    genresText = artist.genres;
+  }
+  document.getElementById(
+    'artist-genres'
+  ).textContent = `Genres: ${genresText}`;
 
   // Albums
   try {
     const albums = await fetchAlbumsByArtist(artist._id);
     albumsContainer.innerHTML = '';
 
-    albums.forEach(album => {
+    albums.albumsList.forEach(album => {
       const albumDiv = document.createElement('div');
       albumDiv.classList.add('album');
 
-      const tracks = album.tracks || album.albumsList?.tracks || [];
+      const tracks = album.tracks || [];
+
+      const headerHtml = `
+        <div class="album-header">
+          <span>Track</span>
+          <span>Time</span>
+          <span></span>
+        </div>
+      `;
+
+      const tracksHtml = tracks
+        .map(track => {
+          const youtubeLink = track.movie
+            ? `
+              <a href="${track.movie}" target="_blank" aria-label="YouTube link" class="youtube-link">
+                <svg class="icon-youtube" width="21" height="15" aria-hidden="true" focusable="false">
+                  <use href="/src/img/sprite.svg#icon-Youtube"></use>
+                </svg>
+              </a>`
+            : '';
+
+          return `
+            <li>
+              <span>${track.strTrack}</span>
+              <div class="track-meta">
+                <span>${formatDuration(track.intDuration)}</span>
+                ${youtubeLink}
+              </div>
+            </li>
+          `;
+        })
+        .join('');
 
       albumDiv.innerHTML = `
         <h3>${album.strAlbum}</h3>
+        ${headerHtml}
         <ul>
-          <li class="album-header">
-            <span>Track</span>
-            <span>Time</span>
-            <span></span>
-          </li>
-          ${tracks
-            .map(
-              track => `
-            <li>
-              <span>${track.strTrack}</span>
-              <span>${track.intDuration || '-'}</span>
-              ${
-                track.movie
-                  ? `<a href="${track.movie}" target="_blank" aria-label="YouTube link">▶</a>`
-                  : ''
-              }
-            </li>
-          `
-            )
-            .join('')}
-        </ul>`;
+          ${tracksHtml}
+        </ul>
+      `;
+
       albumsContainer.appendChild(albumDiv);
     });
   } catch (err) {
@@ -107,32 +141,52 @@ async function populateModal(artist) {
 function closeModal() {
   modal.classList.add('hidden');
   document.body.style.overflow = '';
-  listeners.forEach(({ el, event, handler }) =>
+  dynamicListeners.forEach(({ el, event, handler }) =>
     el.removeEventListener(event, handler)
   );
-  listeners = [];
+  dynamicListeners = [];
+  // listeners.forEach(({ el, event, handler }) =>
+  //   el.removeEventListener(event, handler)
+  // );
+  // listeners = [];
 }
 
-function addListener(el, event, handler) {
+// function addListener(el, event, handler) {
+//   el.addEventListener(event, handler);
+//   listeners.push({ el, event, handler });
+// }
+
+function addDynamicListener(el, event, handler) {
   el.addEventListener(event, handler);
-  listeners.push({ el, event, handler });
+  dynamicListeners.push({ el, event, handler });
 }
 
 // Init
-addListener(closeBtn, 'click', closeModal);
-addListener(overlay, 'click', closeModal);
-addListener(document, 'keydown', e => {
+closeBtn.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
+document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeModal();
+});
+// addListener(closeBtn, 'click', closeModal);
+// addListener(overlay, 'click', closeModal);
+// addListener(document, 'keydown', e => {
+//   if (e.key === 'Escape') closeModal();
+// });
+
+//Click outside the modal
+modal.addEventListener('click', e => {
+  const content = modal.querySelector('.modal-content');
+  if (!content.contains(e.target)) {
+    closeModal();
+  }
 });
 
 // --- Opening modal by click on Learn more ---
-addListener(document, 'click', e => {
-  const learnMoreBtn = e.target.closest('.artists-link');
+gallery.addEventListener('click', e => {
+  const learnMoreBtn = e.target.closest('.js-learn-more');
   if (!learnMoreBtn) return;
 
   e.preventDefault();
   const artistId = learnMoreBtn.dataset.id;
-  if (artistId) {
-    openArtistModal(artistId);
-  }
+  if (artistId) openArtistModal(artistId);
 });

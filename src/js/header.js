@@ -1,5 +1,7 @@
 
-document.addEventListener("DOMContentLoaded", () => {
+
+ document.addEventListener("DOMContentLoaded", () => {
+
     const refs = {
       openBtn: document.querySelector('[data-menu-open]'),
       closeBtns: document.querySelectorAll('[data-menu-close]'),
