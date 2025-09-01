@@ -106,7 +106,7 @@ async function populateModal(artist) {
             ? `
               <a href="${track.movie}" target="_blank" aria-label="YouTube link" class="youtube-link">
                 <svg class="icon-youtube" width="21" height="15" aria-hidden="true" focusable="false">
-                  <use href="/img/sprite.svg#icon-Youtube"></use>
+                  <use href="/youtube.svg#icon-Youtube"></use>
                 </svg>
               </a>`
             : '';
