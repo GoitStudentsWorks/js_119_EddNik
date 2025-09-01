@@ -1,32 +1,162 @@
 .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0 ;
-}
-.feedback-rating .star-rating {
-    font-size: 20px;
-    /* розмір зірочок */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
+/* Свайпер */
 .feedback-swiper {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
-
+.swiper {
+  margin-bottom: 16px;
+}
 .swiper-slide {
-    font-family: "Epilogue", sans-serif;
-        font-weight: 700;
-        font-size: 32px;
-        line-height: 1.3;
-        letter-spacing: -0.01em;
-        text-align: center;
-        color: #fff;
+  font-family: "Epilogue", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #fff;
 }
 
+.feedback-card {
+  padding: 0 0 16px 0;
+}
+
+/* Рейтинг */
+.feedback-rating .star-rating {
+  font-size: 20px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 32px;
+  pointer-events: none;
+}
+
+.star {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+
+/* Текст та автор */
+.feedback-text {
+  font-family: var(--second-family);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--color-scheme-1-text);
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.feedback-author {
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--color-scheme-1-text);
+  text-align: center;
+}
+
+/* Пагінація */
+.swiper-pagination {
+  position: static !important;
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  padding: 10px 0;
+}
+
+.swiper-pagination span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.swiper-pagination-bullet-active {
+  background: #764191;
+}
+
+/* Кнопки-стрілки */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* SVG-стрілка */
+.icon-arrow {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+  color: #ffffff;
+}
+
+.swiper-button-prev .icon-arrow {
+  transform: rotate(180deg);
+}
+
+.swiper-button-disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .feedback-card {
+    padding: 0 93px 16px;
+  }
+
+  .feedback-text {
+    font-size: 26px;
+  }
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 44px !important;
+  height: 44px !important;
+  top: 50% !important;
+  margin-top: -22px !important;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  .swiper-button-prev {
+    left: 0;
+  }
+  .swiper-button-next {
+    right: 0;
+  }
+}
