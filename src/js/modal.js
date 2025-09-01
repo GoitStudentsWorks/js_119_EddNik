@@ -5,8 +5,10 @@ const overlay = modal.querySelector('.modal-overlay');
 const closeBtn = modal.querySelector('.modal-close');
 const loader = document.getElementById('loader');
 const albumsContainer = document.getElementById('artist-albums');
+const gallery = document.querySelector('.artist-gallery');
 
-let listeners = [];
+// let listeners = [];
+let dynamicListeners = [];
 
 // format duration of track
 function formatDuration(ms) {
@@ -104,7 +106,7 @@ async function populateModal(artist) {
             ? `
               <a href="${track.movie}" target="_blank" aria-label="YouTube link" class="youtube-link">
                 <svg class="icon-youtube" width="21" height="15" aria-hidden="true" focusable="false">
-                  <use href="../img/sprite.svg#icon-Youtube"></use>
+                  <use href="/src/img/sprite.svg#icon-Youtube"></use>
                 </svg>
               </a>`
             : '';
@@ -139,26 +141,40 @@ async function populateModal(artist) {
 function closeModal() {
   modal.classList.add('hidden');
   document.body.style.overflow = '';
-  listeners.forEach(({ el, event, handler }) =>
+  dynamicListeners.forEach(({ el, event, handler }) =>
     el.removeEventListener(event, handler)
   );
-  listeners = [];
+  dynamicListeners = [];
+  // listeners.forEach(({ el, event, handler }) =>
+  //   el.removeEventListener(event, handler)
+  // );
+  // listeners = [];
 }
 
-function addListener(el, event, handler) {
+// function addListener(el, event, handler) {
+//   el.addEventListener(event, handler);
+//   listeners.push({ el, event, handler });
+// }
+
+function addDynamicListener(el, event, handler) {
   el.addEventListener(event, handler);
-  listeners.push({ el, event, handler });
+  dynamicListeners.push({ el, event, handler });
 }
 
 // Init
-addListener(closeBtn, 'click', closeModal);
-addListener(overlay, 'click', closeModal);
-addListener(document, 'keydown', e => {
+closeBtn.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
+document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeModal();
 });
+// addListener(closeBtn, 'click', closeModal);
+// addListener(overlay, 'click', closeModal);
+// addListener(document, 'keydown', e => {
+//   if (e.key === 'Escape') closeModal();
+// });
 
 //Click outside the modal
-addListener(modal, 'click', e => {
+modal.addEventListener('click', e => {
   const content = modal.querySelector('.modal-content');
   if (!content.contains(e.target)) {
     closeModal();
@@ -166,13 +182,11 @@ addListener(modal, 'click', e => {
 });
 
 // --- Opening modal by click on Learn more ---
-addListener(document, 'click', e => {
-  const learnMoreBtn = e.target.closest('.artists-link');
+gallery.addEventListener('click', e => {
+  const learnMoreBtn = e.target.closest('.js-learn-more');
   if (!learnMoreBtn) return;
 
   e.preventDefault();
   const artistId = learnMoreBtn.dataset.id;
-  if (artistId) {
-    openArtistModal(artistId);
-  }
+  if (artistId) openArtistModal(artistId);
 });
