@@ -1,11 +1,11 @@
 .hero-section {
   background-color: #23132b;
   position: relative;
-  
 }
+
 .hero-section::before,
 .hero-section::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   right: 0;
@@ -24,13 +24,12 @@
   background: linear-gradient(0deg, #060307 0%, rgba(35, 19, 43, 0) 100%);
 }
 
-.hero-container{
+.hero-container {
   padding: 64px 16px;
 }
 
-
 .hero-text {
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;
@@ -40,7 +39,7 @@
 }
 
 .hero-title {
-  font-family: "Epilogue", sans-serif;
+  font-family: 'Epilogue', sans-serif;
   font-weight: 700;
   font-size: 48px;
   line-height: 1.1;
@@ -92,7 +91,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .hero-container{
+  .hero-container {
     padding: 32px;
   }
 
@@ -106,10 +105,10 @@
     margin-bottom: 32px;
     max-width: 624px;
   }
-  .explore-artists-box{
-      margin: 0;
-      margin-bottom: 32px;
-      max-width: 246px;
+  .explore-artists-box {
+    margin: 0;
+    margin-bottom: 32px;
+    max-width: 246px;
   }
 
   .hero-section::after {
@@ -136,11 +135,11 @@
     margin-bottom: 32px;
   }
 
-  .hero-context{
+  .hero-context {
     margin: auto 0;
   }
 
-  .explore-artists-box{
+  .explore-artists-box {
     max-width: 208px;
   }
 }
