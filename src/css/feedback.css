@@ -10,7 +10,6 @@
   border: 0;
 }
 
-/* Контейнер */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -18,10 +17,8 @@
   padding: 0 16px;
 }
 
-/* Свайпер */
 .feedback-swiper {
   position: relative;
-  /* важливо для кнопок */
   width: 100%;
   margin: 0 auto;
 }
@@ -40,18 +37,15 @@
   color: #fff;
 }
 
-/* Картка відгуку */
 .feedback-card {
   padding: 32px 16px;
   background: rgba(0, 0, 0, 0.1);
-  /* або інший фон під дизайн */
   border-radius: 12px;
   width: 100%;
-  /* на всю ширину контейнера */
   box-sizing: border-box;
 }
 
-/* Рейтинг */
+
 .feedback-rating .star-rating {
   font-size: 20px;
 }
@@ -84,7 +78,7 @@ input.star-rating::before {
   left: 0;
   font-size: 20px;
   color: transparent;
-  /* пусті зірки прозорі */
+  
 }
 
 input.star-rating[value]::after {
@@ -94,12 +88,11 @@ input.star-rating[value]::after {
   left: 0;
   font-size: 20px;
   color: #764191;
-  /* заповнені зірки фіолетові */
   width: calc(var(--value) * 20%);
   overflow: hidden;
 }
 
-/* Текст та автор */
+
 .feedback-text {
   font-family: var(--second-family);
   font-size: 18px;
@@ -120,7 +113,6 @@ input.star-rating[value]::after {
   text-align: center;
 }
 
-/* Пагінація */
 .swiper-pagination {
   position: static !important;
   display: flex;
@@ -140,7 +132,6 @@ input.star-rating[value]::after {
   background: #764191;
 }
 
-/* Кнопки навігації */
 .swiper-button-prev,
 .swiper-button-next {
   position: absolute;
@@ -151,31 +142,18 @@ input.star-rating[value]::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
   background: transparent;
-  /* без білого фону */
-  border: 2px solid #764191;
-  /* фіолетова обводка */
+  border: none;
+  border-radius: 0;
   color: #764191;
   cursor: pointer;
   z-index: 10;
-  transition: background 0.3s, color 0.3s, border 0.3s;
+  transition: color 0.3s;
 }
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
-  background: rgba(118, 65, 145, 0.1);
-  /* легкий фіолетовий ховер */
-  color: #764191;
-  border-color: #764191;
-}
-
-.swiper-button-prev {
-  left: -60px;
-}
-
-.swiper-button-next {
-  right: -60px;
+  color: #9b6ec9;
 }
 
 .icon-arrow {
@@ -188,12 +166,16 @@ input.star-rating[value]::after {
   transform: rotate(180deg);
 }
 
+.swiper-button-prev .icon-arrow {
+  transform: rotate(180deg);
+}
+
 .swiper-button-disabled {
   opacity: 0.35;
   pointer-events: none;
 }
 
-/* Responsive */
+
 @media only screen and (min-width: 768px) {
   .feedback-card {
     padding: 32px 64px;
