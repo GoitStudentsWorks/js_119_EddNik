@@ -25,7 +25,7 @@
   padding: 20px;
   width: 100%;
   max-width: 320px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   color: #fff;
   position: relative;
   max-height: 95vh;
@@ -36,35 +36,35 @@
    Scrollbar (custom dark gray)
    ======================== */
 .modal-content::-webkit-scrollbar {
-    width: 10px;
-    /* ширина скролбара */
+  width: 10px;
+  /* ширина скролбара */
 }
 
 .modal-content::-webkit-scrollbar-track {
-    background: #060307;
-    /* фон треку (залишаємо чорнуватий) */
-    border-radius: 8px;
+  background: #060307;
+  /* фон треку (залишаємо чорнуватий) */
+  border-radius: 8px;
 }
 
 .modal-content::-webkit-scrollbar-thumb {
-    background-color: #333333;
-    /* темно-сірий повзунок */
-    border-radius: 8px;
-    border: 2px solid #060307;
-    /* відступ між треком і повзунком */
+  background-color: #333333;
+  /* темно-сірий повзунок */
+  border-radius: 8px;
+  border: 2px solid #060307;
+  /* відступ між треком і повзунком */
 }
 
 .modal-content::-webkit-scrollbar-thumb:hover {
-    background-color: #4d4d4d;
-    /* трохи світліший сірий при наведенні */
+  background-color: #4d4d4d;
+  /* трохи світліший сірий при наведенні */
 }
 
 /* Для Firefox */
 .modal-content {
-    scrollbar-width: thin;
-    /* тонкий скролбар */
-    scrollbar-color: #333333 #060307;
-    /* thumb | track */
+  scrollbar-width: thin;
+  /* тонкий скролбар */
+  scrollbar-color: #333333 #060307;
+  /* thumb | track */
 }
 
 .modal-close {
@@ -96,7 +96,7 @@
 
 /* Artist content */
 .artist-name {
-  font-family: 'Epilogue', sans-serif;
+  font-family: "Epilogue", sans-serif;
   font-weight: 700;
   font-size: 20px;
   text-align: center;
@@ -151,7 +151,7 @@
 }
 
 .album h3 {
-  font-family: 'Epilogue', sans-serif;
+  font-family: "Epilogue", sans-serif;
   font-weight: 700;
   font-size: 20px;
   margin: 0 0 8px 0;
