@@ -35,9 +35,11 @@ html {
 .logo-icon {
 }
 
+
 /* ===== .footer-nav ===== */
 .footer-nav {
 }
+
 
 /* ===== .footer-menu / .footer-item ===== */
 .footer-menu {
@@ -51,10 +53,9 @@ html {
 
 /* ===== .footer-link ===== */
 .footer-link {
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #fff;
+color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 /* ===== .footer-social ===== */
@@ -64,7 +65,12 @@ html {
   align-items: center;
   gap: 12px;
 }
-
+.footer-link:hover,
+.footer-link:focus {
+  color: #764491;         
+  transform: scale(1.05); /*==== трохи збільшується ====*/
+  outline: none;          /*==== забирає стандартну рамку ==== */
+}
 .footer-divider {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   width: 288px;
