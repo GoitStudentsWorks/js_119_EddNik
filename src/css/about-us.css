@@ -32,7 +32,6 @@
     border-radius: 20px;
     overflow: hidden;   
     width: 100%;
-    max-width: 288px;
     border: 1px solid #000000;
     object-fit: cover;
 }
@@ -40,7 +39,6 @@
 @media (min-width: 768px) {
     .about-us-picture img {
         border-radius: 16px; 
-        max-width: 704px;
     }
 }
 @media (min-width: 1440px) {

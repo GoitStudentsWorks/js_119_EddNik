@@ -2,34 +2,34 @@
    Base styles (mobile first)
    ======================== */
 .modal {
-    position: fixed;
-    inset: 0; 
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: auto;
-    background: rgba(0, 0, 0, 0.25); 
-    z-index: 1000;
-    padding: 16px;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  padding: 16px;
 }
 
 .modal.hidden {
-    display: none;
+  display: none;
 }
 
 .modal-content {
-    background: #060307;
-    border-radius: 16px;
-    padding: 20px;
-    width: 100%;
-    max-width: 320px;
-    font-family: "Inter", sans-serif;
-    color: #fff;
-    position: relative;
-    max-height: 95vh;
-    overflow-y: auto;
+  background: #060307;
+  border-radius: 16px;
+  padding: 20px;
+  width: 100%;
+  max-width: 320px;
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  position: relative;
+  max-height: 95vh;
+  overflow-y: auto;
 }
 
 /* ========================
@@ -68,59 +68,59 @@
 }
 
 .modal-close {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-close-btn-icon {
-    fill: #fff;
+  fill: #fff;
 }
 
 /* Loader */
 .loader {
-    display: none;
-    text-align: center;
-    margin-top: 16px;
-    font-size: 16px;
-    color: #555;
+  display: none;
+  text-align: center;
+  margin-top: 16px;
+  font-size: 16px;
+  color: #555;
 }
 
 /* Artist content */
 .artist-name {
-    font-family: "Epilogue", sans-serif;
-    font-weight: 700;
-    font-size: 20px;
-    text-align: center;
-    margin: 0 0 16px 0;
+  font-family: 'Epilogue', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  margin: 0 0 16px 0;
 }
 
 .artist-header {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 24px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
 }
 
 .artist-img {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 12px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 .artist-info {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .artist-years,
@@ -129,193 +129,193 @@
 .artist-country,
 .artist-bio,
 .artist-genres {
-    font-size: 14px;
-    line-height: 1.4;
+  font-size: 14px;
+  line-height: 1.4;
 }
 
 /* Albums */
 .artist-albums {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-    margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 16px;
 }
 
 .album {
-    background: #1e1c1f;
-    border-radius: 12px;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  background: #1e1c1f;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .album h3 {
-    font-family: "Epilogue", sans-serif;
-    font-weight: 700;
-    font-size: 20px;
-    margin: 0 0 8px 0;
+  font-family: 'Epilogue', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0 0 8px 0;
 }
 
 /* header desktop */
 .album-header {
-    display: none;
+  display: none;
 }
 
 /* list */
 .album ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .album ul li {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    font-size: 13px;
-    line-height: 1.4;
-    padding: 6px 8px;
-    border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  line-height: 1.4;
+  padding: 6px 8px;
+  border-radius: 6px;
 }
 
 .album ul li:hover {
-    background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .album ul li:nth-child(odd) {
-    background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .album ul li:nth-child(even) {
-    background-color: #1c1c1c;
+  background-color: #1c1c1c;
 }
 
 .track-meta {
-    display: flex;
-    gap: 8px;
-    font-size: 12px;
-    align-items: center;
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  align-items: center;
 }
 
 /* YouTube button */
 .album ul li a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #2A2A2A;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    color: #fff;
-    transition: background 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2a2a2a;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  transition: background 0.2s ease;
 }
 
 .youtube-link {
-    fill: #fff;
+  fill: #fff;
 }
 
 .album ul li a:hover {
-    background-color: #444;
+  background-color: #444;
 }
 
 /* ========================
    Tablet (768px+)
    ======================== */
 @media screen and (min-width: 768px) {
-    .modal-content {
-        padding: 32px;
-        max-width: 700px;
-    }
+  .modal-content {
+    padding: 32px;
+    max-width: 700px;
+  }
 
-    .artist-name {
-        font-size: 28px;
-        margin-bottom: 24px;
-    }
+  .artist-name {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
 
-    .artist-header {
-        flex-direction: row;
-        gap: 20px;
-    }
+  .artist-header {
+    flex-direction: row;
+    gap: 20px;
+  }
 
-    .artist-img {
-        max-width: 280px;
-        flex-shrink: 0;
-    }
+  .artist-img {
+    max-width: 280px;
+    flex-shrink: 0;
+  }
 
-    .artist-info {
-        gap: 10px;
-    }
+  .artist-info {
+    gap: 10px;
+  }
 
-    .artist-albums {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .artist-albums {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    .album h3 {
-        font-size: 20px;
-    }
+  .album h3 {
+    font-size: 20px;
+  }
 
-    .album-header {
-        display: grid;
-        grid-template-columns: 1fr 60px 40px;
-        font-size: 14px;
-        font-weight: 600;
-        padding: 4px 12px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        margin-bottom: 4px;
-    }
+  .album-header {
+    display: grid;
+    grid-template-columns: 1fr 60px 40px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 4px;
+  }
 
-    .album ul li {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
+  .album ul li {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    .track-meta {
-        font-size: 13px;
-    }
+  .track-meta {
+    font-size: 13px;
+  }
 }
 
 /* ========================
    Desktop (1440px+)
    ======================== */
 @media screen and (min-width: 1440px) {
-    .modal-content {
-        padding: 48px;
-        max-width: 1000px;
-    }
+  .modal-content {
+    padding: 48px;
+    max-width: 1000px;
+  }
 
-    .artist-name {
-        font-size: 36px;
-    }
+  .artist-name {
+    font-size: 36px;
+  }
 
-    .artist-header {
-        gap: 32px;
-    }
+  .artist-header {
+    gap: 32px;
+  }
 
-    .artist-img {
-        max-width: 350px;
-    }
+  .artist-img {
+    max-width: 350px;
+  }
 
-    .artist-info {
-        gap: 14px;
-        font-size: 16px;
-    }
+  .artist-info {
+    gap: 14px;
+    font-size: 16px;
+  }
 
-    .artist-albums {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 24px;
-    }
+  .artist-albums {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
 
-    .album {
-        padding: 16px;
-        gap: 12px;
-    }
+  .album {
+    padding: 16px;
+    gap: 12px;
+  }
 
-    .album h3 {
-        font-size: 22px;
-    }
+  .album h3 {
+    font-size: 22px;
+  }
 }

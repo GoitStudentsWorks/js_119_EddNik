@@ -187,16 +187,7 @@ function closeModal() {
     el.removeEventListener(event, handler)
   );
   dynamicListeners = [];
-  // listeners.forEach(({ el, event, handler }) =>
-  //   el.removeEventListener(event, handler)
-  // );
-  // listeners = [];
 }
-
-// function addListener(el, event, handler) {
-//   el.addEventListener(event, handler);
-//   listeners.push({ el, event, handler });
-// }
 
 function addDynamicListener(el, event, handler) {
   el.addEventListener(event, handler);
@@ -209,11 +200,6 @@ overlay.addEventListener('click', closeModal);
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeModal();
 });
-// addListener(closeBtn, 'click', closeModal);
-// addListener(overlay, 'click', closeModal);
-// addListener(document, 'keydown', e => {
-//   if (e.key === 'Escape') closeModal();
-// });
 
 //Click outside the modal
 modal.addEventListener('click', e => {

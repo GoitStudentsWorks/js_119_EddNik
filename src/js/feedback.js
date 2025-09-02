@@ -5,18 +5,17 @@ import { fetchFeedbacks } from './soundwave-api.js';
 const swiperWrapper = document.querySelector('.feedback-swiper .swiper-wrapper');
 const nextBtn = document.querySelector('.swiper-button-next');
 const prevBtn = document.querySelector('.swiper-button-prev');
-const paginationEl = document.querySelector('.swiper-pagination');
+const dots = document.querySelectorAll('.custom-pagination .dot');
 
-// Функція створення відгуку
+
 function createFeedbackCard(feedback) {
   const slide = document.createElement('div');
   slide.classList.add('swiper-slide', 'feedback-card');
 
   const rating = Math.round(feedback.rating ?? 0);
   let stars = '';
-
   for (let i = 1; i <= 5; i++) {
-    stars += `<span class="star" style="color: ${i <= rating ? '#764191' : 'transparent'};">★</span>`;
+    stars += `<span class="star" style="color: ${i <= rating ? '#764191' : '#ffffff'};">★</span>`;
   }
 
   slide.innerHTML = `
@@ -42,25 +41,36 @@ async function initFeedbacks() {
         nextEl: nextBtn,
         prevEl: prevBtn,
       },
-      pagination: {
-        el: paginationEl,
-        clickable: true,
-        renderBullet: function (index, className) {
-          return `<span class="${className}"></span>`;
-        },
-      },
       keyboard: { enabled: true },
       on: {
         slideChange: function () {
+         
           prevBtn.classList.toggle('swiper-button-disabled', this.isBeginning);
           nextBtn.classList.toggle('swiper-button-disabled', this.isEnd);
+
+         
+          dots.forEach(dot => dot.classList.remove('active'));
+          if (this.activeIndex === 0) dots[0].classList.add('active');
+          else if (this.activeIndex === 9) dots[2].classList.add('active');
+          else dots[1].classList.add('active');
         },
       },
     });
 
-    // Початковий стан кнопок
     prevBtn.classList.add('swiper-button-disabled');
     if (feedbacks.length <= 1) nextBtn.classList.add('swiper-button-disabled');
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const index = dot.dataset.index;
+        if (index === 'first') swiper.slideTo(0);
+        if (index === 'middle') swiper.slideTo(1);
+        if (index === 'last') swiper.slideTo(9);
+      });
+    });
+
+    dots[0].classList.add('active');
+
   } catch (error) {
     console.error('Failed to load feedbacks:', error);
     swiperWrapper.innerHTML = '<p>Failed to load feedbacks.</p>';
