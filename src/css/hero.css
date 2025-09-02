@@ -1,5 +1,5 @@
 .hero-section {
-  background-color: #23132b;
+  background-color: var(--color-affair-darkest);
   position: relative;
 }
 
@@ -25,26 +25,24 @@
 }
 
 .hero-container {
-  padding: 0 16px;
+
+  padding: 64px 16px 0px;
 }
 
 .hero-text {
-  font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;
-  color: #fff;
   margin-bottom: 24px;
   max-width: 288px;
 }
 
 .hero-title {
-  font-family: 'Epilogue', sans-serif;
+  font-family: var(--second-family);
   font-weight: 700;
   font-size: 48px;
   line-height: 1.1;
   letter-spacing: -0.01em;
-  color: #fff;
   max-width: 288px;
   margin-bottom: 20px;
 }
@@ -86,10 +84,11 @@
   cursor: pointer;
 }
 
-.hero-image {
+.hero-image img {
+  display: block;
   width: 100%;
+  height: auto;
 }
-
 .hero-link-explore{
   display: flex;
   align-items: center;
@@ -97,12 +96,13 @@
 
 @media screen and (min-width: 768px) {
   .hero-container {
-    padding: 0 32px;
+    padding: 24px 32px 0px;
   }
 
   .hero-title {
     max-width: 624px;
     margin-bottom: 24px;
+    margin-top: 24px;
   }
 
   .hero-text {
