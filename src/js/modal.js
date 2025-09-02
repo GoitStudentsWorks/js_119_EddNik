@@ -7,7 +7,6 @@ const loader = document.getElementById('loader');
 const albumsContainer = document.getElementById('artist-albums');
 const gallery = document.querySelector('.artist-gallery');
 
-// let listeners = [];
 let dynamicListeners = [];
 
 // format duration of track
@@ -100,29 +99,6 @@ async function populateModal(artist) {
         </div>
       `;
 
-      // const tracksHtml = tracks
-      //   .map(track => {
-      //     const youtubeLink = track.movie
-      //       ? `
-      //         <a href="${track.movie}" target="_blank" aria-label="YouTube link" class="youtube-link">
-      //           <svg class="icon-youtube" width="21" height="15" aria-hidden="true" focusable="false">
-      //             <use href="/public/youtube.svg#icon-Youtube"></use>
-      //           </svg>
-      //         </a>`
-      //       : '';
-
-      //     return `
-      //       <li>
-      //         <span>${track.strTrack}</span>
-      //         <div class="track-meta">
-      //           <span>${formatDuration(track.intDuration)}</span>
-      //           ${youtubeLink}
-      //         </div>
-      //       </li>
-      //     `;
-      //   })
-      //   .join('');
-
       const tracksHtml = tracks
         .map(track => {
           let youtubeLink = '';
@@ -187,16 +163,7 @@ function closeModal() {
     el.removeEventListener(event, handler)
   );
   dynamicListeners = [];
-  // listeners.forEach(({ el, event, handler }) =>
-  //   el.removeEventListener(event, handler)
-  // );
-  // listeners = [];
 }
-
-// function addListener(el, event, handler) {
-//   el.addEventListener(event, handler);
-//   listeners.push({ el, event, handler });
-// }
 
 function addDynamicListener(el, event, handler) {
   el.addEventListener(event, handler);
@@ -209,11 +176,6 @@ overlay.addEventListener('click', closeModal);
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeModal();
 });
-// addListener(closeBtn, 'click', closeModal);
-// addListener(overlay, 'click', closeModal);
-// addListener(document, 'keydown', e => {
-//   if (e.key === 'Escape') closeModal();
-// });
 
 //Click outside the modal
 modal.addEventListener('click', e => {

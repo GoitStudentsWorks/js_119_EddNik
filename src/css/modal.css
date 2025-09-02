@@ -32,39 +32,23 @@
   overflow-y: auto;
 }
 
-/* ========================
-   Scrollbar (custom dark gray)
-   ======================== */
 .modal-content::-webkit-scrollbar {
   width: 10px;
-  /* ширина скролбара */
 }
 
 .modal-content::-webkit-scrollbar-track {
   background: #060307;
-  /* фон треку (залишаємо чорнуватий) */
   border-radius: 8px;
 }
 
 .modal-content::-webkit-scrollbar-thumb {
   background-color: #333333;
-  /* темно-сірий повзунок */
   border-radius: 8px;
   border: 2px solid #060307;
-  /* відступ між треком і повзунком */
 }
 
 .modal-content::-webkit-scrollbar-thumb:hover {
   background-color: #4d4d4d;
-  /* трохи світліший сірий при наведенні */
-}
-
-/* Для Firefox */
-.modal-content {
-  scrollbar-width: thin;
-  /* тонкий скролбар */
-  scrollbar-color: #333333 #060307;
-  /* thumb | track */
 }
 
 .modal-close {
