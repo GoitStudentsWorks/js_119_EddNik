@@ -64,7 +64,7 @@
 @media (min-width: 768px) {
   .header-section {
     height: 72px;
-    display: flex;
+    display: block
   }
   .burger-icon {
     display: none;
@@ -143,3 +143,4 @@
 .no-scroll {
   overflow: hidden;
 }
+
