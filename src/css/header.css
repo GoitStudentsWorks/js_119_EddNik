@@ -102,10 +102,11 @@
   align-items: center;
   text-align: center;
   gap: 32px;
+  margin-top: 39px;
 }
 
 .navbar-item {
-  height: 50px;
+  height: 39px;
   padding: 12px 0;
 }
 
