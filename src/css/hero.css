@@ -65,7 +65,7 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 150%;
-  color: var(--color-white);
+  color: var(--color-scheme-1-text);
   margin: 0 auto;
   transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
   margin-bottom: 64px;
@@ -78,15 +78,14 @@
     inset 0 0 0 1px var(--opacity-neutral-darkest-15),
     inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
     inset 0 32px 24px 0 var(--opacity-white-5);
-  background-color: var(--color-affair-lighter);
-  color: var(--color-affair-dark);
+  background-color: var(--color-affair);
   cursor: pointer;
+  transform: scale(1.05);
+  opacity: 0.6;
 }
 
 .hero-image img {
-  display: block;
   width: 100%;
-  height: auto;
 }
 .hero-link-explore {
   display: flex;
