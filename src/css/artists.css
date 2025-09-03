@@ -47,6 +47,17 @@ margin-left: 8px;
   line-height: 150%;
   color: var(--color-scheme-1-text);
 }
+.artists-btn-load:hover,
+.artists-btn-load:focus {
+  background-color: #a569bd; 
+  transform: scale(1.05);
+  outline: none;
+}
+
+.artists-btn-load:hover .icon,
+.artists-btn-load:focus .icon {
+  fill: white;
+}
 button.artists-btn-load {
   display: flex !important;
   justify-content: center;
