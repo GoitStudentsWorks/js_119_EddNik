@@ -49,32 +49,50 @@ margin-left: 8px;
 }
 .artists-btn-load:hover,
 .artists-btn-load:focus {
-  background-color: #a569bd; 
+box-shadow: 0 1px 2px 0 var(--opacity-neutral-darkest-5),
+inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
+inset 0 0 0 1px var(--opacity-neutral-darkest-15),
+inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+inset 0 32px 24px 0 var(--opacity-white-5);
+  background: var(--color-affair);
   transform: scale(1.05);
-  outline: none;
+  opacity: 0.6;
 }
 
-.artists-btn-load:hover .icon,
-.artists-btn-load:focus .icon {
-  fill: white;
-}
 button.artists-btn-load {
   display: flex !important;
   justify-content: center;
     align-items: center;
 }
-.artists-link{
+.artists-link {
   font-weight: 500;
   font-size: 18px;
-
-  /* line-height: 27px; */
   line-height: 150%;
-   display: inline-flex;
+  display: inline-flex;
   align-items: center;
   margin-top: 24px;
   text-decoration: none;
   cursor: pointer;
+
+  /* inactive по умолчанию */
+  opacity: 1;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
+
+/* Hover / Focus */
+.artists-link:hover,
+.artists-link:focus {
+  opacity: 0.6;
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* Active */
+.artists-link:active {
+  opacity: 0.2;
+  transform: scale(0.95);
+}
+
     .artist-gallery {
       display: block;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
