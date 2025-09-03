@@ -86,11 +86,11 @@
   cursor: pointer;
 }
 
-.hero-image {
+.hero-image img {
   width: 100%;
 }
 
-.hero-link-explore{
+.hero-link-explore {
   display: flex;
   align-items: center;
 }
