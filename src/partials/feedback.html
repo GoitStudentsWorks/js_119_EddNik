@@ -26,5 +26,58 @@
         <span class="dot" data-index="last"></span>
       </div>
     </div>
+
+    <!--Button Leave feedback-->
+    <button class="leave-feedback-btn" type="button">Leave feedback</button>
   </div>
 </section>
+<!--Feedback Modal-->
+<div class="feedback-backdrop hidden" id="feedbackModal">
+  <form
+    class="feedback-modal-form"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="feedbackModalTitle"
+  >
+    <button class="feedback-modal-close" type="button" aria-label="Close-modal">
+      <svg class="feedback-modal-svg" width="32" height="32">
+        <use href="img/sprite.svg#icon-modal-close"></use>
+      </svg>
+    </button>
+
+    <h2 class="feedback-modal-title" id="feedbackModalTitle">
+      Submit feedback
+    </h2>
+
+    <label for="user-name" class="feedback-modal-label">Name</label>
+    <input
+      id="user-name"
+      class="feedback-modal-input"
+      type="text"
+      name="user-name"
+      placeholder="Emily"
+      required
+    />
+
+    <label for="user-feedback" class="feedback-modal-label">Message</label>
+    <textarea
+      id="user-feedback"
+      class="feedback-modal-textarea"
+      name="user-feedback"
+      placeholder="Type your message..."
+      required
+    ></textarea>
+
+    <div class="stars-wrapper">
+      <span class="modal-star" data-value="1"></span>
+      <span class="modal-star" data-value="2"></span>
+      <span class="modal-star" data-value="3"></span>
+      <span class="modal-star" data-value="4"></span>
+      <span class="modal-star" data-value="5"></span>
+    </div>
+    <input type="hidden" name="rating" id="ratingValue" value="0" />
+    <div id="ratingError" class="field-error"></div>
+
+    <button type="submit" class="feedback-modal-btn">Submit</button>
+  </form>
+</div>
