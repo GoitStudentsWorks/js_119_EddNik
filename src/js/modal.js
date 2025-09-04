@@ -7,7 +7,6 @@ const loader = document.getElementById('loader');
 const albumsContainer = document.getElementById('artist-albums');
 const gallery = document.querySelector('.artist-gallery');
 
-// let listeners = [];
 let dynamicListeners = [];
 
 // format duration of track
@@ -102,22 +101,41 @@ async function populateModal(artist) {
 
       const tracksHtml = tracks
         .map(track => {
-          const youtubeLink = track.movie
-            ? `
-              <a href="${track.movie}" target="_blank" aria-label="YouTube link" class="youtube-link">
-                <svg class="icon-youtube" width="21" height="15" aria-hidden="true" focusable="false">
-                  <use href="/youtube.svg#icon-Youtube"></use>
-                </svg>
-              </a>`
-            : '';
+          let youtubeLink = '';
+          if (track.movie) {
+            const link = document.createElement('a');
+            link.href = track.movie;
+            link.target = '_blank';
+            link.ariaLabel = 'YouTube link';
+            link.classList.add('youtube-link');
+
+            const svg = document.createElementNS(
+              'http://www.w3.org/2000/svg',
+              'svg'
+            );
+            svg.setAttribute('class', 'icon-youtube');
+            svg.setAttribute('width', '21');
+            svg.setAttribute('height', '15');
+
+            const use = document.createElementNS(
+              'http://www.w3.org/2000/svg',
+              'use'
+            );
+            use.setAttribute('href', '/img/sprite.svg#icon-Youtube');
+
+            svg.appendChild(use);
+            link.appendChild(svg);
+
+            youtubeLink = link.outerHTML;
+          }
 
           return `
             <li>
               <span>${track.strTrack}</span>
-              <div class="track-meta">
-                <span>${formatDuration(track.intDuration)}</span>
-                ${youtubeLink}
-              </div>
+                <div class="track-meta">
+                  <span>${formatDuration(track.intDuration)}</span>
+                    ${youtubeLink}
+                </div>
             </li>
           `;
         })

@@ -38,8 +38,7 @@ export async function fetchAlbumsByArtist(id) {
 export async function fetchFeedbacks() {
   try {
     const response = await axios.get(`${BASE_URL}/feedbacks`);
-    console.log('Raw feedback response:', response.data);
-    
+
     // Якщо API обертає дані у response.data.data
     if (Array.isArray(response.data)) {
       return response.data;
@@ -50,7 +49,7 @@ export async function fetchFeedbacks() {
       return [];
     }
   } catch (error) {
-    console.error("Error fetching feedbacks:", error);
+    console.error('Error fetching feedbacks:', error);
     throw error;
   }
 }
@@ -58,9 +57,9 @@ export async function fetchFeedbacks() {
 export async function postFeedback(feedbackData) {
   try {
     const response = await axios.post(`${BASE_URL}/feedbacks`, feedbackData);
-    return response.data; 
+    return response.data;
   } catch (error) {
-    console.error("Error posting feedback:", error);
+    console.error('Error posting feedback:', error);
     throw error;
   }
 }

@@ -25,11 +25,30 @@
   padding: 20px;
   width: 100%;
   max-width: 320px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   color: #fff;
   position: relative;
   max-height: 95vh;
   overflow-y: auto;
+}
+
+.modal-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: #060307;
+  border-radius: 8px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: #333333;
+  border-radius: 8px;
+  border: 2px solid #060307;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background-color: #4d4d4d;
 }
 
 .modal-close {
@@ -61,7 +80,7 @@
 
 /* Artist content */
 .artist-name {
-  font-family: 'Epilogue', sans-serif;
+  font-family: "Epilogue", sans-serif;
   font-weight: 700;
   font-size: 20px;
   text-align: center;
@@ -116,7 +135,7 @@
 }
 
 .album h3 {
-  font-family: 'Epilogue', sans-serif;
+  font-family: "Epilogue", sans-serif;
   font-weight: 700;
   font-size: 20px;
   margin: 0 0 8px 0;
