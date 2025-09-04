@@ -99,7 +99,7 @@
   }
 
   .hero-title {
-    /* font-size: 48px; */
+    font-size: 48px;
     max-width: 624px;
     margin-bottom: 24px;
     margin-top: 24px;
@@ -132,7 +132,7 @@
   .hero-title {
     min-width: 640px;
     font-weight: 700;
-    /* font-size: 84px; */
+    font-size: 84px;
   }
 
   .hero-title {
