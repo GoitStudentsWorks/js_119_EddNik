@@ -39,7 +39,8 @@
 .hero-title {
   font-family: var(--second-family);
   font-weight: 700;
-  font-size: 48px;
+  /* font-size: 48px; */
+  font-size: clamp(2rem, 5vw, 4rem);
   line-height: 1.1;
   letter-spacing: -0.01em;
   max-width: 288px;
