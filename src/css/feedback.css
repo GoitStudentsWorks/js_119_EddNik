@@ -235,13 +235,13 @@
 
 .feedback-modal-title {
   margin: 16px 0 8px;
-  font: 700 24px/1.3 var(--second-family, inherit);
+  font-family: var(--second-family, inherit);
   letter-spacing: -0.01em;
   text-align: center;
 }
 
 .feedback-modal-label {
-  font: 400 18px/1.5 var(--font-family, inherit);
+  font-family: var(--font-family, inherit);
   margin-top: 8px;
 }
 
@@ -301,7 +301,7 @@
 
 .field-error {
   margin-top: 4px;
-  font: 400 12px/1.5 var(--font-family, inherit);
+  font-family: var(--font-family, inherit);
   color: #ff4d4f;
 }
 
@@ -314,7 +314,7 @@
   border-radius: 12px;
   background: #764191;
   color: #fff;
-  font: 600 16px/1 var(--font-family, inherit);
+  font-family: var(--font-family, inherit);
   cursor: pointer;
   transition: background .25s ease, transform .05s ease;
 }
