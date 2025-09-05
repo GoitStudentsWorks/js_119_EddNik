@@ -1,4 +1,5 @@
 import { fetchArtistById, fetchAlbumsByArtist } from './soundwave-api';
+const SPRITE_URL = new URL('../img/sprite.svg', import.meta.url).href;
 
 const modal = document.getElementById('artist-modal');
 const overlay = modal.querySelector('.modal-overlay');
@@ -106,8 +107,9 @@ async function populateModal(artist) {
             const link = document.createElement('a');
             link.href = track.movie;
             link.target = '_blank';
-            link.ariaLabel = 'YouTube link';
+            link.rel = 'noopener'
             link.classList.add('youtube-link');
+            link.setAttribute('aria-label', 'YouTube link');
 
             const svg = document.createElementNS(
               'http://www.w3.org/2000/svg',
@@ -121,7 +123,8 @@ async function populateModal(artist) {
               'http://www.w3.org/2000/svg',
               'use'
             );
-            use.setAttribute('href', '/img/sprite.svg#icon-Youtube');
+            use.setAttribute('href', `${SPRITE_URL}#icon-youtube`);
+            use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', `${SPRITE_URL}#icon-youtube`);
 
             svg.appendChild(use);
             link.appendChild(svg);
