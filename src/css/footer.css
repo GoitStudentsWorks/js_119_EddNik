@@ -88,6 +88,13 @@ color: #ffffff;
   flex-direction: column;
   gap: 24px;
   color: #fff;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.footer-soc:hover,
+.footer-soc:focus {
+  color: #764191;
+  transform: scale(1.05);
+  outline: none;
 }
 
 /* ===== .footer-logo-item ===== */
@@ -96,6 +103,8 @@ color: #ffffff;
   height: 34px; */
   display: block;
   fill: currentColor;
+  transition: fill 0.3s ease;
+    
 }
 
 /* ===== .footer-copy ===== */
