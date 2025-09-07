@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ArtistsHub connects music lovers with artists. Discover new music, explore genres, and share feedback."
+    />
+    <link rel="icon" type="image/svg+xml" href="/js_119_EddNik/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.css"
+      integrity="sha512-gnAN+RgTMylunXI7AMg+PtcUGpKZFkZJoFIkAWvdPFRrFJz3p2tx4+9xbjILRfN7CzoViMgS8vSf06fSQzWZjA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100..900&family=IBM+Plex+Sans:wght@100..700&family=Roboto:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>ArtistsHub</title>
+    <script type="module" crossorigin src="/js_119_EddNik/index.js"></script>
+    <link rel="modulepreload" crossorigin href="/js_119_EddNik/assets/vendor-DAK8oDSN.js">
+    <link rel="stylesheet" crossorigin href="/js_119_EddNik/assets/vendor-58GSwf4d.css">
+    <link rel="stylesheet" crossorigin href="/js_119_EddNik/assets/index-BBMluREL.css">
+  </head>
+  <body>
+    <header class="header-section">
+  <div class="container header-container">
+    <nav class="navigation-menu">
+      <a class="nav-logo" href="./index.html" aria-label="Site logo">
+        <svg class="nav-logo-icon" width="100" height="30">
+          <use href="/js_119_EddNik/assets/sprite-UW2HH8rk.svg#logo"></use>
+        </svg>
+      </a>
+      <ul class="navigation-list">
+        <li class="navigation-item">
+          <a href="#artists" class="navigation-link">Artists</a>
+        </li>
+        <li class="navigation-item">
+          <a href="#about-us" class="navigation-link">About Us</a>
+        </li>
+        <li class="navigation-item">
+          <a href="#feedback" class="navigation-link">Reviews</a>
+        </li>
+      </ul>
+      <svg class="burger-icon" width="24" height="24" data-menu-open>
+        <use href="/js_119_EddNik/assets/sprite-UW2HH8rk.svg#burger-menu"></use>
+      </svg>
+    </nav>
+  
+    <section class="navbar-menu" data-menu>
+    <div class="container navbar-header-container">
+      <a class="nav-logo" href="./index.html" aria-label="Site logo">
+        <svg class="nav-logo-icon" width="100" height="30">
+          <use href="/js_119_EddNik/assets/sprite-UW2HH8rk.svg#logo"></use>
+        </svg>
+      </a>
+
+      <svg class="navbar-close" width="24" height="24" data-menu-close>
+        <use href="/js_119_EddNik/assets/sprite-UW2HH8rk.svg#burger-close"></use>
+      </svg>
+    </div>
+
+    <nav class="container navbar-container">
+      <ul class="navbar-list">
+        <li class="navbar-item">
+          <a href="#artists" class="navbar-link" data-menu-close-artist
+            >Artist</a
+          >
+        </li>
+        <li class="navbar-item">
+          <a href="#about-us" class="navbar-link" data-menu-close-aboutus
+            >About us</a
+          >
+        </li>
+        <li class="navbar-item">
+          <a href="#feedback" class="navbar-link" data-menu-close-reviews
+            >Reviews</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </section>
+  </div>
+</header>
+
+
+    <main>
+      <section class="hero-section" id="main-page">
+  <div class="container hero-container">
+    <div class="hero-context">
+      <h1 class="hero-title">Discover Your Next Favorite Artist Today</h1>
+      <p class="hero-text">
+        Dive into a world of music discoveries with ArtistsHub - your personal
+        guide to the boundless universe of sound. Explore, filter, and learn
+        about your favorite artists all in one place.
+      </p>
+      <div class="explore-artists-box">
+        <a class="hero-link-explore" href="#artists"
+          >Explore Artists
+          <svg class="nav-logo-icon" width="24" height="20">
+            <use href="/js_119_EddNik/assets/sprite-UW2HH8rk.svg#explore-artists"></use>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <picture class="hero-img">
+        <source
+          srcset="/js_119_EddNik/assets/desktop-1x-BeV4JReG.webp 1x, /js_119_EddNik/assets/desktop-2x-C-M2ep4a.webp 2x"
+          media="(min-width: 1440px)"
+        />
+        <source
+          srcset="/js_119_EddNik/assets/tablet-1x-O394yLEj.webp 1x, /js_119_EddNik/assets/tablet-2x-DIz4Ojht.webp 2x"
+          media="(min-width: 768px)"
+        />
+        <source
+          srcset="/js_119_EddNik/assets/mobile-1x-CmYUkGQx.webp 1x, /js_119_EddNik/assets/mobile-2x-BcsEASOH.webp 2x"
+          media="(max-width: 767px)"
+        />
+        <img src="/js_119_EddNik/assets/mobile-1x-CmYUkGQx.webp" alt="Hero img preview" />
+      </picture>
+    </div>
+  </div>
+</section>
+
+      <div id="artist-modal" class="modal hidden">
+  <div class="modal-overlay"></div>
+  <div class="container container-modal">
+    <div class="modal-content">
+      <button class="modal-close" type="button">
+        <svg class="modal-close-btn-icon" width="16" height="16">
+          <use href="/js_119_EddNik/assets/sprite-UW2HH8rk.svg#icon-modal-close"></use>
+        </svg>
+      </button>
+
+      <div class="modal-body">
+        <h2 id="artist-name" class="artist-name"></h2>
+        <div class="artist-header">
+          <img
+            id="artist-image"
+            src="''"
+            alt="Artist Image"
+            class="artist-img"
+          />
+          <div class="artist-info">
+            <p id="artist-years" class="artist-years"></p>
+            <p id="artist-gender" class="artist-gender hidden"></p>
+            <p id="artist-members" class="artist-members hidden"></p>
+            <p id="artist-country" class="artist-country"></p>
+            <p id="artist-bio" class="artist-bio"></p>
+            <p id="artist-genres" class="artist-genres"></p>
+          </div>
+        </div>
+
+        <div id="artist-albums" class="artist-albums"></div>
+      </div>
+
+      <div id="loader" class="loader">Loading...</div>
+    </div>
+  </div>
+</div>
+
+      <section id="artists" class="artists">
+  <div class="container artist-container">
+    <div class="artists-text-container">
+      <h2 class="artists-title">Artists</h2>
+      <p class="artists-text">Explore Your New Favorite Artists</p>
+    </div>
+    <ul class="artist-gallery">
+    </ul>
+    <div class="btn-container">
+      <button type="button" class="artists-btn-load">Load more<svg class="icon" width="24" height="24">
+          <use href="/js_119_EddNik/assets/artists-0QW274gA.svg#icon-down-arrow-alt"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+      <section id="about-us" class="about-us-section">
+  <div class="container about-as-container">
+    <picture class="about-us-picture">
+      <source
+        srcset="/js_119_EddNik/assets/about-us-team-desk@1x-BS3Ul4b0.webp 1x, /js_119_EddNik/assets/about-us-team-desk@2x-DzozqQ0G.webp 2x"
+        media="(min-width: 1440px)"
+      />
+      <source
+        srcset="/js_119_EddNik/assets/about-us-team-tablet@1x-C83AJqFZ.webp 1x, /js_119_EddNik/assets/about-us-team-tablet@2x-B1WrLHND.webp 2x"
+        media="(min-width: 768px) and (max-width: 1439px)"
+      />
+      <source
+        srcset="/js_119_EddNik/assets/about-us-team-phone@1x-C3ccdLvp.webp 1x, /js_119_EddNik/assets/about-us-team-phone@2x-DECaEOgq.webp 2x"
+        media="(max-width: 767px)"
+      />
+      <img
+        src="/js_119_EddNik/assets/about-us-team-tablet@1x-C83AJqFZ.webp"
+        alt="About Us Image"
+        class="about-us-image"
+      />
+    </picture>
+    <div class="about-us-description">
+            <svg class="about-us-svg">
+                <use href="/js_119_EddNik/assets/about-us-CfS1FPVa.svg#icon-logo-icon"></use>
+            </svg>
+            <h2 class="about-us-title">About ArtistsHub</h2>
+            <p class="about-us-text">
+                At ArtistsHub, our mission is to connect music lovers with the artists they adore. We strive to
+                create a
+                vibrant
+                community where discovering new music is as enjoyable as listening to it.
+            </p>
+        </div>
+  </div>
+  
+</section>
+
+      <section id="feedback" class="feedbacks">
+  <h2 class="visually-hidden">Feedbacks our visitors</h2>
+  <div class="container">
+    <div class="swiper feedback-swiper">
+      <div class="swiper-wrapper" id="feedback-list"></div>
+
+      <button
+        class="swiper-button-prev"
+        type="button"
+        aria-label="Previous slide"
+      >
+        <svg class="icon-arrow" width="24" height="24" aria-hidden="true">
+          <use href="/js_119_EddNik/assets/sprite-UW2HH8rk.svg#icon-arrow"></use>
+        </svg>
+      </button>
+
+      <button class="swiper-button-next" type="button" aria-label="Next slide">
+        <svg class="icon-arrow" width="24" height="24" aria-hidden="true">
+          <use href="/js_119_EddNik/assets/sprite-UW2HH8rk.svg#icon-arrow"></use>
+        </svg>
+      </button>
+
+      <div class="swiper-pagination custom-pagination">
+        <span class="dot" data-index="first"></span>
+        <span class="dot" data-index="middle"></span>
+        <span class="dot" data-index="last"></span>
+      </div>
+    </div>
+
+    <!--Button Leave feedback-->
+    <button class="leave-feedback-btn" type="button">Leave feedback</button>
+  </div>
+</section>
+<!--Feedback Modal-->
+<div class="feedback-backdrop hidden" id="feedbackModal">
+
+  <form class="feedback-modal-form">
+
+    <button class="feedback-modal-close" type="button" aria-label="Close-modal">
+      <svg class="feedback-modal-svg" width="32" height="32">
+        <use href="/js_119_EddNik/assets/sprite-UW2HH8rk.svg#icon-modal-close"></use>
+      </svg>
+    </button>
+
+    <h2 class="feedback-modal-title" id="feedbackModalTitle">
+      Submit feedback
+    </h2>
+
+    <label for="user-name" class="feedback-modal-label">Name</label>
+    <input
+      id="user-name"
+      class="feedback-modal-input"
+      type="text"
+      name="user-name"
+      placeholder="Emily"
+      required
+    />
+
+    <label for="user-feedback" class="feedback-modal-label">Message</label>
+    <textarea
+      id="user-feedback"
+      class="feedback-modal-textarea"
+      name="user-feedback"
+      placeholder="Type your message..."
+      required
+    ></textarea>
+
+    <div class="stars-wrapper">
+      <span class="modal-star" data-value="1"></span>
+      <span class="modal-star" data-value="2"></span>
+      <span class="modal-star" data-value="3"></span>
+      <span class="modal-star" data-value="4"></span>
+      <span class="modal-star" data-value="5"></span>
+    </div>
+    <input type="hidden" name="rating" id="ratingValue" value="0" />
+    <div id="ratingError" class="field-error"></div>
+
+    <button type="submit" class="feedback-modal-btn">Submit</button>
+  </form>
+</div>
+
+    </main>
+
+    <footer class="footer container" id="footer">
+  <div class="footer-container">
+    <!-- Brand -->
+    <a class="logo" href="#" aria-label="ArtistsHub">
+      <!--Логотип зі спрайту -->
+      <svg class="logo-icon" width="106" height="30" aria-hidden="true" focusable="false">
+        <use href="/js_119_EddNik/assets/sprite-UW2HH8rk.svg#logo"></use>
+      </svg>
+    </a>
+
+    <!-- Nav -->
+    <nav class="footer-nav" aria-label="Footer">
+      <ul class="footer-menu">
+        <li class="footer-item"><a class="footer-link" href="#artists">Artists</a></li>
+        <li class="footer-item"><a class="footer-link" href="#about-us">About us</a></li>
+        <li class="footer-item"><a class="footer-link" href="#feedback">Reviews</a></li>
+      </ul>
+    </nav>
+    
+    <div class="footer-divider"></div>
+    <div class="copy-social">
+
+    <!-- Social -->
+    <div class="footer-social">
+      <a class="footer-soc" href="https://www.instagram.com/goitclub/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg class="footer-logo-item" width="34" height="34" aria-hidden="true" focusable="false">
+          <use href="/js_119_EddNik/assets/footer-CB-sMClq.svg#icon-Instagram"></use>
+        </svg>
+      </a>
+      <a class="footer-soc" href="https://www.facebook.com/goITclub" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <svg class="footer-logo-item" width="34" height="34" aria-hidden="true" focusable="false">
+          <use href="/js_119_EddNik/assets/footer-CB-sMClq.svg#icon-Facebook"></use>
+        </svg>
+      </a>
+      <a class="footer-soc" href="https://www.youtube.com/c/GoIT" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+        <svg class="footer-logo-item" width="34" height="34" aria-hidden="true" focusable="false">
+          <use href="/js_119_EddNik/assets/footer-CB-sMClq.svg#icon-Youtube"></use>
+        </svg>
+      </a>
+    </div>
+
+    <p class="footer-copy">&copy; <span id="year"></span> ArtistsHub. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+
+  </body>
+</html>
