@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/FS-119-ArtistsHub",
+    "build": "vite build --base=/js_119_EddNik/,
     "preview": "vite preview",
     "push": "git add .; git commit -m 'update'; git push;"
   },
